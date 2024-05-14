@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <link>//localhost:1313/</link>
-    <description>Recent content on </description>
+    <title>pyRevit Labs</title>
+    <link>https://pyrevitlabs.github.io/</link>
+    <description>Recent content on pyRevit Labs</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 14 May 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pyrevitlabs.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Support us on Open Collective</title>
-      <link>//localhost:1313/posts/open-collective/</link>
+      <link>https://pyrevitlabs.github.io/posts/open-collective/</link>
       <pubDate>Tue, 14 May 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/open-collective/</guid>
+      <guid>https://pyrevitlabs.github.io/posts/open-collective/</guid>
       <description>Support us on Open Collective and facilitate the deployment and the development of pyRevit&#xA;https://opencollective.com/pyrevitlabs</description>
     </item>
     <item>
       <title>pyRevit Meetup #5</title>
-      <link>//localhost:1313/posts/meetup%235/</link>
+      <link>https://pyrevitlabs.github.io/posts/meetup%235/</link>
       <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/meetup%235/</guid>
+      <guid>https://pyrevitlabs.github.io/posts/meetup%235/</guid>
       <description> The recording https://youtu.be/WsYgpZRQRCo (give it a few hours to be 4K)&#xA;Low attendance but lots of interesting subjects:&#xA;Status of redirect of ein.sh docs (Done) the new API documentation is accessible @ https://docs.pyrevitlabs.io Status of netcore PR (ongoing) Status of onePass account centralisation with accesses to YT, Discourse, OpenCollective, &amp;hellip; We will get a bitwarden set of accounts Status of Open Collective setup - Up and running if you feel like #sponsoring a cool project for #Revit pyRevit CLI commit switch support (Looked into it) Centralized website with all links (notion, dev docs, yt, &amp;hellip; ) - I will take care of it creating a new repo on github using githup pages deployment </description>
     </item>
     <item>
       <title></title>
-      <link>//localhost:1313/about/</link>
+      <link>https://pyrevitlabs.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/about/</guid>
+      <guid>https://pyrevitlabs.github.io/about/</guid>
       <description>pyRevit helps you quickly sketch out your automation and addon ideas, in whichever language that you are most comfortable with, inside the Revit environment and using its APIs. It also ships with an extensive set of powerful tools that showcase its capabilities as a development environment. Download and install pyRevit, launch Revit, and note the new pyRevit tab that includes these tools. pyRevit also ships with a handy CLI utility for customized configuration and deployment of your tools, and a telemetry server to monitor pyRevit usage across your teams.</description>
     </item>
   </channel>
