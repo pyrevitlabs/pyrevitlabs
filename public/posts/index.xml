@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on </title>
+    <link>//localhost:1313/posts/</link>
+    <description>Recent content in Posts on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Support us on Open Collective</title>
+      <link>//localhost:1313/posts/open-collective/</link>
+      <pubDate>Tue, 14 May 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/open-collective/</guid>
+      <description>Support us on Open Collective and facilitate the deployment and the development of pyRevit&#xA;https://opencollective.com/pyrevitlabs</description>
+    </item>
+    <item>
+      <title>pyRevit Meetup #5</title>
+      <link>//localhost:1313/posts/meetup%235/</link>
+      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/meetup%235/</guid>
+      <description> The recording https://youtu.be/WsYgpZRQRCo (give it a few hours to be 4K)&#xA;Low attendance but lots of interesting subjects:&#xA;Status of redirect of ein.sh docs (Done) the new API documentation is accessible @ https://docs.pyrevitlabs.io Status of netcore PR (ongoing) Status of onePass account centralisation with accesses to YT, Discourse, OpenCollective, &amp;hellip; We will get a bitwarden set of accounts Status of Open Collective setup - Up and running if you feel like #sponsoring a cool project for #Revit pyRevit CLI commit switch support (Looked into it) Centralized website with all links (notion, dev docs, yt, &amp;hellip; ) - I will take care of it creating a new repo on github using githup pages deployment </description>
+    </item>
+  </channel>
+</rss>
