@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pyrevitlabs.github.io/pyrevitlabs/posts/open-collective/</loc>
+    <loc>http://localhost:1313/pyrevitlabs/posts/open-collective/</loc>
     <lastmod>2024-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://pyrevitlabs.github.io/pyrevitlabs/posts/meetup%235/</loc>
+    <loc>http://localhost:1313/pyrevitlabs/posts/meetup%235/</loc>
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://pyrevitlabs.github.io/pyrevitlabs/posts/</loc>
+    <loc>http://localhost:1313/pyrevitlabs/posts/</loc>
     <lastmod>2024-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://pyrevitlabs.github.io/pyrevitlabs/</loc>
+    <loc>http://localhost:1313/pyrevitlabs/</loc>
     <lastmod>2024-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://pyrevitlabs.github.io/pyrevitlabs/about/</loc>
+    <loc>http://localhost:1313/pyrevitlabs/about/</loc>
   </url><url>
-    <loc>https://pyrevitlabs.github.io/pyrevitlabs/authors/</loc>
+    <loc>http://localhost:1313/pyrevitlabs/authors/</loc>
   </url><url>
-    <loc>https://pyrevitlabs.github.io/pyrevitlabs/categories/</loc>
+    <loc>http://localhost:1313/pyrevitlabs/categories/</loc>
   </url><url>
-    <loc>https://pyrevitlabs.github.io/pyrevitlabs/series/</loc>
+    <loc>http://localhost:1313/pyrevitlabs/series/</loc>
   </url><url>
-    <loc>https://pyrevitlabs.github.io/pyrevitlabs/tags/</loc>
+    <loc>http://localhost:1313/pyrevitlabs/tags/</loc>
   </url>
 </urlset>

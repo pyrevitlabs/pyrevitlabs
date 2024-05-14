@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "coder-dark.css",
-	"sourceRoot": "C:/pyRevit/pyrevit-landing-page/quickstart",
+	"sourceRoot": "C:/pyRevit/pyrevitlabs",
 	"sources": [
 		"themes/hugo-coder/assets/scss/coder-dark.scss",
 		"themes/hugo-coder/assets/scss/_variables.scss",
