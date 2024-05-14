@@ -69,6 +69,7 @@ style = "github-dark"
   weight = 6
   url = "mailto:hello@pyrevitlabs.io"
 
+
 # Menu links
 [[menu.main]]
   name = "About"
@@ -78,4 +79,7 @@ style = "github-dark"
   name = "Blog"
   weight = 2
   url  = "posts/"
-copyright = '© 2025 pyrevitlabs.io'
+[[menu.main]]
+  name = "Team"
+  weight = 3
+  url  = "team"
