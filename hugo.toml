@@ -50,11 +50,11 @@ style = "github-dark"
   url = "https://opencollective.com/pyrevitlabs"
 [[params.social]]
   name = "Forum pyRevit"
-  icon = "fa-brands fa-discourse fa-2x"
+  icon = "fa-regular fa-comments fa-2x"
   weight = 3
   url = "https://discourse.pyrevitlabs.io"
 [[params.social]]
-  name = "Developer Docs"
+  name = "Documentation"
   icon = "fa-solid fa-book fa-2x"
   weight = 4
   url = "http://wiki.pyrevitlabs.io/"
@@ -64,7 +64,13 @@ style = "github-dark"
   weight = 5
   url = "http://docs.pyrevitlabs.io/"
 [[params.social]]
+  name = "Developer Docs"
+  icon = "fa-regular fa-keyboard fa-2x"
+  weight = 5
+  url = "http://devdocs.pyrevitlabs.io/"
+[[params.social]]
   name = "Email"
+  alt = "Email"
   icon = "fa-solid fa-at fa-2x"
   weight = 6
   url = "mailto:hello@pyrevitlabs.io"
