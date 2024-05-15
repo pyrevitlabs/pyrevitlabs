@@ -48,7 +48,7 @@ style = "github-dark"
   name = "OpenCollective"
   icon = "fa-solid fa-circle-dollar-to-slot fa-2x"
   weight = 2
-  url = "https://opencollective.com/pyrevitlabs"
+  url = "https://opencollective.com/pyrevitlabs/donate"
 [[params.social]]
   name = "Forum pyRevit"
   icon = "fa-regular fa-comments fa-2x"
@@ -69,12 +69,7 @@ style = "github-dark"
   icon = "fa-regular fa-keyboard fa-2x"
   weight = 5
   url = "http://devdocs.pyrevitlabs.io/"
-[[params.social]]
-  name = "Email"
-  alt = "Email"
-  icon = "fa-solid fa-at fa-2x"
-  weight = 6
-  url = "mailto:hello@pyrevitlabs.io"
+
 
 
 # Menu links
