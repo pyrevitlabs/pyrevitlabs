@@ -16,10 +16,10 @@ style = "github-dark"
   keywords = "pyRevit, pyrevitlabs, pyrevit labs, website"
   avatarurl = "https://img.icons8.com/color/240/pyrevit.png"
 
-  faviconSVG = "/img/icons8-pyrevit.svg"
-  favicon_32 = "/img/icons8-pyrevit-color-32.png"
-  favicon_16 = "/img/icons8-pyrevit-color-16.png"
-  favicon = "/img/favicon.ico"
+  faviconSVG = "/icons8-pyrevit.svg"
+  favicon_32 = "/icons8-pyrevit-color-32.png"
+  favicon_16 = "/icons8-pyrevit-color-16.png"
+  favicon = "/favicon.ico"
 
   since = 2014
 
