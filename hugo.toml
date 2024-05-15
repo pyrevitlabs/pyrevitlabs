@@ -19,7 +19,6 @@ style = "github-dark"
   faviconSVG = "/img/icons8-pyrevit.svg"
   favicon_32 = "/img/icons8-pyrevit-color-32.png"
   favicon_16 = "/img/icons8-pyrevit-color-16.png"
-  favicon = "/img/favicon.ico"
 
   since = 2014
 
