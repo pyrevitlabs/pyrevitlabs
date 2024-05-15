@@ -16,6 +16,9 @@ style = "github-dark"
   keywords = "pyRevit, pyrevitlabs, pyrevit labs, website"
   avatarurl = "https://img.icons8.com/color/240/pyrevit.png"
 
+  favicon_32 = "/img/favicon.ico"
+  favicon_16 = "/img/favicon.ico"
+
   since = 2014
 
   enableTwemoji = true
