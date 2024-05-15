@@ -3,3 +3,6 @@ baseURL = "https://example.com/"
 [module]
 [module.hugoVersion]
 min = "0.77.0"
+
+favicon_32 = "/img/favicon.ico"
+favicon_16 = "/img/favicon.ico"
