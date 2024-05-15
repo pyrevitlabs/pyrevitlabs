@@ -31,7 +31,7 @@ style = "github-dark"
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]
 [params.meta]
-  favicon = false
+  favicon = true
 [taxonomies]
   category = "categories"
   series = "series"
