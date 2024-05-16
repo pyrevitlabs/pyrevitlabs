@@ -5,6 +5,7 @@ languagecode = "en"
 defaultcontentlanguage = "en"
 
 paginate = 20
+enableRobotsTXT = true
 
 [markup.highlight]
 style = "github-dark"
