@@ -1,4 +1,4 @@
-baseURL = 'https://pyrevitlabs.github.io/'
+baseURL = 'https://pyrevitlabs.io/'
 title = 'pyRevit Labs'
 theme = "hugo-coder"
 languagecode = "en"
