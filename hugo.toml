@@ -17,6 +17,7 @@ style = "github-dark"
   keywords = "pyRevit, pyrevitlabs, pyrevit labs, website"
   avatarurl = "pyRevitLogo.svg"
 
+  latestversiontitle = "v4.8.16"
   latestversion = "https://github.com/pyrevitlabs/pyRevit/releases/tag/v4.8.16.24121%2B2117"
 
   since = 2014
