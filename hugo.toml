@@ -1,5 +1,5 @@
 baseURL = 'https://pyrevitlabs.io/'
-title = 'pyRevit Labs'
+title = 'pyRevitLabs'
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
