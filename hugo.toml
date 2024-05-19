@@ -15,7 +15,7 @@ style = "github-dark"
   info = "RAD Tools for Autodesk Revit"
   description = "Rapid Application Development (RAD) Environment for Autodesk Revit"
   keywords = "pyRevit, pyrevitlabs, pyrevit labs, website"
-  avatarurl = "icons8-pyrevit.svg"
+  avatarurl = "pyRevitLogo.svg"
 
   since = 2014
 
