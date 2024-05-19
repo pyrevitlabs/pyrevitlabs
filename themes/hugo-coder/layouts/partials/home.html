@@ -1,3 +1,28 @@
+<style>
+  .avatar img {
+    border-radius: 0;
+  }
+
+  .downloadButton {
+    display: block;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 1rem;
+    color: white;
+    background: #0f161c;
+    font-size: x-large;
+    text-align: center;
+  }
+
+  .downloadIcon {
+    width: 40px;
+    height: 40px;
+  }
+</style>
+
 <section class="container centered">
   <div class="about">
     {{ partialCached "home/avatar.html" . }}
@@ -5,7 +30,12 @@
     {{ partialCached "home/author.html" . }}
 
     {{ partialCached "home/social.html" . }}
-    
-   </div>
+
+    <a
+      class="downloadButton"
+      href="{{ .Site.Params.latestversion }}">
+      v4.8.16
+    </a>
+  </div>
   {{ partialCached "home/extensions.html" . }}
 </section>
