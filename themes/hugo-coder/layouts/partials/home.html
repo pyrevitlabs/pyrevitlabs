@@ -3,7 +3,7 @@
     border-radius: 0;
   }
 
-  .downloadButton {
+  button {
     display: block;
     width: 150px;
     height: 50px;
@@ -11,19 +11,23 @@
     margin: 0 auto;
     margin-top: 30px;
     border-radius: 1rem;
-    color: white !important;
-    background: #0f161c;
+    border: none;
     font-size: x-large;
     text-align: center;
+    background-color: #377bc8;
+    text-decoration: none;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .downloadButton:hover {
-  background-color: #1565c0;
+  button:hover {
+    background-color: #377bc881;
   }
 
-  .downloadIcon {
-    width: 40px;
-    height: 40px;
+  button:focus,
+  button:active,
+  button:hover {
+    text-decoration: none;
   }
 
   .footer a {
@@ -43,10 +47,9 @@
 
     {{ partialCached "home/social.html" . }}
 
-    <a
-      class="downloadButton"
-      href="{{ .Site.Params.latestversion }}">
-      {{ .Site.Params.latestversiontitle }}
+    <a href="{{ .Site.Params.latestversion }}">
+      <button type="button" >{{ .Site.Params.latestversiontitle }} <i
+          class="fa-solid fa-download"></i></button>
     </a>
   </div>
   {{ partialCached "home/extensions.html" . }}
