@@ -27,6 +27,8 @@ style = "github-dark"
   colorScheme = "auto"
   hidecolorschemetoggle = false
 
+  commit = "https://github.com/pyrevitlabs/pyRevit/commits/develop-4"
+
   # customCSS = ["css/custom.css"]
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]
