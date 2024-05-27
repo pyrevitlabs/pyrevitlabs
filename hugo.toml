@@ -27,8 +27,6 @@ style = "github-dark"
   colorScheme = "auto"
   hidecolorschemetoggle = false
 
-  commit = "https://github.com/pyrevitlabs/pyRevit/tree/"
-
   # customCSS = ["css/custom.css"]
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]
