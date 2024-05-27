@@ -1,4 +1,11 @@
-+++ date = 2024-05-27 draft = false title = 'pyRevit Meetup #6' weight = 10 [params] author = 'Jean-Marc Couffin' +++ 
++++ 
+date = 2024-05-27 
+draft = false 
+title = 'pyRevit Meetup #6' 
+weight = 10 
+[params]
+  author = 'Jean-Marc Couffin'
++++ 
 
 Next meetup coming up on the 17th of june with lots of topics including the new website ;p
 
