@@ -38,7 +38,6 @@
     background-color: transparent !important;
   }
 </style>
-
 <section class="container centered">
   <div class="about">
     {{ partialCached "home/avatar.html" . }}
@@ -51,6 +50,11 @@
       <button type="button" >{{ .Site.Params.latestversiontitle }} <i
           class="fa-solid fa-download"></i></button>
     </a>
+    <a href="" class="downloadUrl">
+      <button type="button" style="font-size: large; background-color: rgb(255, 186, 82);" >WIP Installers <i
+          class="fa-solid fa-download"></i></button>
+    </a>
+
   </div>
   {{ partialCached "home/extensions.html" . }}
 </section>

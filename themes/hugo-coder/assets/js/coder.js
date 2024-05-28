@@ -95,3 +95,49 @@ function setTheme(theme) {
 function rememberTheme(theme) {
     localStorage.setItem('colorscheme', theme);
 }
+
+// Fetch the latest artifact from the GitHub Actions API fro WIP installer on the develop-4 branch
+
+async function fetchLatestArtifact() {
+    const url = `https://api.github.com/repos/pyrevitlabs/pyRevit/actions/artifacts`;
+    
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        if (response.ok) {
+            // check the latest artifacts that are from the develop-4 head_branch
+            const latestArtifact = data.artifacts.find(artifact => artifact.workflow_run.head_branch === 'develop-4');
+            return {
+                url: latestArtifact.url.split('{')[0].split('/actions/artifacts/')[1],
+                run_id: latestArtifact.workflow_run.id,
+                head_branch: latestArtifact.workflow_run.head_branch,
+            };
+        } else {
+            throw new Error(data.message);
+        }
+    } catch (error) {
+        console.error('Error fetching artifacts:', error);
+        return null;
+    }
+}
+
+fetchLatestArtifact()
+    .then(artifact => {
+        if (artifact) {
+            // console.log('Latest artifact URL:', artifact.url);
+            // console.log('Latest run number:', artifact.run_id);
+            // console.log('Workflow details:', artifact.head_branch);
+            // reconstruct the download url from https://github.com/pyrevitlabs/pyRevit/actions/runs/9252590255/artifacts/1540428578
+            const downloadUrl = `https://github.com/pyrevitlabs/pyRevit/actions/runs/${artifact.run_id}/artifacts/${artifact.url}`;
+            console.log('Download URL:', downloadUrl);
+            // replace the download link in the page from downloadUrl to the const
+            const downloadLink = document.querySelector('.downloadUrl');
+            downloadLink.href = downloadUrl;
+
+
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
