@@ -9,4 +9,7 @@ weight = 10
 
 Next meetup coming up on the 17th of june with lots of topics including the new website!
 
-[Add to Calendar](https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MWNwcTUxYmJlcjltYjI5ZmIydXA5bjloZWkgamVhbi1tYXJjLmNvdWZmaW5AYmltb25lLmNvbQ&amp;tmsrc=jean-marc.couffin%40bimone.com)
+[Add to Google Calendar](https://us06web.zoom.us/meeting/tZcrf-yoqDkvHdB86Ap1YIByXGhRutB6z1BL/calendar/google/add)
+
+
+[Add to Outlook](https://us06web.zoom.us/meeting/tZcrf-yoqDkvHdB86Ap1YIByXGhRutB6z1BL/ics)
