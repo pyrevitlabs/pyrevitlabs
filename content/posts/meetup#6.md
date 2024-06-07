@@ -7,7 +7,7 @@ weight = 10
   author = 'Jean-Marc Couffin'
 +++ 
 
-Next meetup coming up on the 17th of june with lots of topics including the new website!
+Next meetup coming up on the 24th of june with lots of topics including the new website!
 
 [Add to Google Calendar](https://us06web.zoom.us/meeting/tZcrf-yoqDkvHdB86Ap1YIByXGhRutB6z1BL/calendar/google/add)
 
