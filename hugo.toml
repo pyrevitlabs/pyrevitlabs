@@ -26,7 +26,6 @@ style = "github-dark"
 
   colorScheme = "auto"
   hidecolorschemetoggle = false
-  favicon_32 = "/img/favicon.ico"
 
   # customCSS = ["css/custom.css"]
   # customSCSS = ["scss/custom.scss"]
