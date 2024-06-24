@@ -124,12 +124,55 @@ fetchLatestArtifact()
     .then(artifact => {
         if (artifact) {
             // reconstruct the download url from https://github.com/pyrevitlabs/pyRevit/actions/runs/9252590255/artifacts/1540428578
-            const downloadUrl = `https://github.com/pyrevitlabs/pyRevit/actions/runs/${artifact.run_id}/artifacts/${artifact.url}`;
-            // replace the download link in the page from downloadUrl to the const
-            const downloadLink = document.querySelector('.downloadUrl');
-            downloadLink.href = downloadUrl;
+            const WIPdownloadUrl = `https://github.com/pyrevitlabs/pyRevit/actions/runs/${artifact.run_id}/artifacts/${artifact.url}`;
+            // replace the download link in the page from WIPdownloadUrl to the const
+            const downloadLink = document.querySelector('.WIPdownloadUrl');
+            downloadLink.href = WIPdownloadUrl;
         }
     })
     .catch(error => {
         console.error('Error:', error);
     });
+
+
+    async function fetchLatestReleasePage() {
+        const url = `https://api.github.com/repos/pyrevitlabs/pyRevit/releases`;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            
+            if (response.ok) {
+                // Assuming the first release is the latest
+                const latestRelease = data[0];
+                return {
+                    html_url: latestRelease.html_url,
+                    tag_name: latestRelease.tag_name,
+                    name: latestRelease.name,
+                };
+            } else {
+                throw new Error(data.message);
+            }
+        } catch (error) {
+            console.error('Error fetching releases:', error);
+            return null;
+        }
+    }
+    
+    fetchLatestReleasePage()
+        .then(release => {
+            if (release) {
+                // Use the release page URL
+                const releasePageUrl = release.html_url;
+                // Replace the download link in the page with the release page URL
+                const downloadLink = document.querySelector('.downloadLink');
+                downloadLink.href = releasePageUrl;
+                const tag_name = release.tag_name.split('.').slice(0, -1).join('.').split('v').slice(1).join('v');
+                // Select the button inside the download link
+                const downloadButton = document.querySelector('.downloadLink button');
+                // Update the button's inner HTML
+                downloadButton.innerHTML = `Latest Release <i class="fa-solid fa-download"></i></br>${tag_name}`;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });

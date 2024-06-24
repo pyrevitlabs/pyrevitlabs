@@ -36,12 +36,11 @@
     flex-direction: column;
     align-items: flex-end;
     padding: 2em;
-  
   }
 
   button {
     display: block;
-    width: 180px;
+    width: 200px;
     height: 90px;
     line-height: 1.2;
     margin-top: 30px;
@@ -78,7 +77,6 @@
     text-decoration: none;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    
   }
 
 </style>
@@ -90,24 +88,17 @@
       </div>
 
       <div class="column-r">
-        <a href="{{ .Site.Params.latestversion }}"></a>
-    
-        <a href="{{ .Site.Params.latestversion }}">
-          <button type="button">Latest Release {{ .Site.Params.latestversiontitle }} <i class="fa-solid fa-download"></i></button>
+        <a href="" class="downloadLink">
+          <button type="button"> <i class="fa-solid fa-download"></i></button>
         </a>
-        <a href="" class="downloadUrl">
+        <a href="" class="WIPdownloadUrl">
           <button type="button" class="wip-b">WIP Installers <i
               class="fa-solid fa-download"></i></button>
         </a>
-
       </div>
     </div>
     {{ partialCached "home/author.html" . }}
-
     {{ partialCached "home/social.html" . }}
-
-
-
   </div>
   {{ partialCached "home/extensions.html" . }}
 </section>
