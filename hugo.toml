@@ -66,8 +66,14 @@ style = "github-dark"
 [[params.social]]
   name = "Developer Docs"
   icon = "fa-regular fa-keyboard fa-2x"
-  weight = 5
+  weight = 6
   url = "http://devdocs.pyrevitlabs.io/"
+[[params.social]]
+  name = "pyRevit YouTube Channel"
+  icon = "fa-brands fa-youtube fa-2x"
+  weight = 7
+  url = "http://www.youtube.com/@pyRevit"
+
 
 
 
