@@ -18,5 +18,5 @@ weight = 1
 
 {{< youtube z6awU7HgrZU >}}
 
-
+### Next meetup on the 16th of september
 
