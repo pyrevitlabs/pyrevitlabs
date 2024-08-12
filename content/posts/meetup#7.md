@@ -1,5 +1,5 @@
 +++ 
-date = 2024-06-24 
+date = 2024-08-12 
 draft = false 
 title = 'pyRevit Meetup #7' 
 weight = 1 
@@ -7,19 +7,16 @@ weight = 1
   author = 'Jean-Marc Couffin'
 +++ 
 
-Next meetup coming up on the 12th of august:
+
+- pyRevit 5 Pre-Release
+- Preflight checks hackathon
+- Issues fixing bounties?
+- **Priorities after pyrevit 5:**
+    - **dll hell** fixing (bounty or hire?)
+    - Rewriting the actual dynamic assemblies - Lots of rewriting - Speed and avoid dynamic searching (would solve some of the dll hell - pyRevit Loader errors)
+- varia…
+
+{{< youtube z6awU7HgrZU >}}
 
 
-- Revit 2025 support
-- preflight Checks Hackathon organization
-https://github.com/orgs/pyrevitlabs/projects/1/views/1
 
-
-
-[Add to Google Calendar](https://us06web.zoom.us/meeting/tZYrdO-tqD4jHdDt7RNt1pXm1Y5aVS0ILecD/calendar/google/add)
-
-
-[Add to Outlook](https://us06web.zoom.us/meeting/tZYrdO-tqD4jHdDt7RNt1pXm1Y5aVS0ILecD/ics)
-
-or direct link
-https://us06web.zoom.us/j/82636565974?pwd=QqJbMafZtzbV8EYyTkYnXu6upUx0Lr.1
