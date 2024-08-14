@@ -96,7 +96,7 @@ function rememberTheme(theme) {
     localStorage.setItem('colorscheme', theme);
 }
 
-// Fetch the latest artifact from the GitHub Actions API fro WIP installer on the develop-4 branch
+// Fetch the latest artifact from the GitHub Actions API fro WIP installer on the develop branch
 async function fetchLatestArtifact() {
     const url = `https://api.github.com/repos/pyrevitlabs/pyRevit/actions/artifacts`;
     try {
@@ -104,8 +104,8 @@ async function fetchLatestArtifact() {
         const data = await response.json();
         
         if (response.ok) {
-            // check the latest artifacts that are from the develop-4 head_branch
-            const latestArtifact = data.artifacts.find(artifact => artifact.workflow_run.head_branch === 'develop-4');
+            // check the latest artifacts that are from the develop head_branch
+            const latestArtifact = data.artifacts.find(artifact => artifact.workflow_run.head_branch === 'develop');
             return {
                 url: latestArtifact.url.split('{')[0].split('/actions/artifacts/')[1],
                 run_id: latestArtifact.workflow_run.id,
