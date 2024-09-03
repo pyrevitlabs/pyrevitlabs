@@ -216,7 +216,11 @@ class ModelChecker(PreflightTestCase):
 ## FAQ
 ___
 
-- Where to ask for help?
+- **Where to ask for help?**
 
   on the [pyRevit forum](https://discourse.pyrevitlabs.io/)
+
+- **What is the story behind the preflight checks tool?**
+
+  David Vadkerti, Ehsan and Jean-Marc converged when Jean-Marc noticed David Vadkerti [Model Checker tool](https://bitbucket.org/davidvadkerti/customtools/src/master/CustomTools.tab/Batch.panel/Model%20checker.splitpushbutton/ModelChecker.pushbutton/script.py), they brought it together with Ehsan to make the core structure of the actual preflight checks tool in Nov 8, 2020
   
