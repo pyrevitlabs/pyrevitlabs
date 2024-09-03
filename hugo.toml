@@ -87,3 +87,8 @@ style = "github-dark"
   name = "Team"
   weight = 3
   url  = "team"
+[[menu.main]]
+  name = "| 🎉 Hackathon - Preflight Checks 2024 |"
+  weight = 4
+  url  = "Hackathon - Preflight Checks 2024"
+
