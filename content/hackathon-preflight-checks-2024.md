@@ -36,9 +36,9 @@ ___
 the file needs to be named: releveanName-**check.py**
 The last part being the most important one, as the parser looks for the check.py in the folder.
 
-<details>
-  <summary>Boiler plate</summary>
-  
+
+<summary>Boiler plate</summary>
+
 ```python
 # -*- coding: UTF-8 -*-
 from pyrevit import script, revit, DB, DOCS
@@ -46,7 +46,6 @@ from pyrevit.preflight import PreflightTestCase
 
 doc = DOCS.doc
 ```
-</details>
 
 <details>
   <summary>🔦 Here, each definition collects info about specific Revit elements. Sample definitions to collect data about grids 👇</summary>
