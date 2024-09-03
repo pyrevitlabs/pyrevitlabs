@@ -1,98 +1,93 @@
 # 🎉 Preflight Checks Hackathon 2024
 
-
-
 ## What is a preflight check in pyRevit?
 ___
 
-Prelflight Checks are python scripts parsed through the preflight checks tools in the pyRevit toolbar.
+Preflight Checks are Python scripts processed through the Preflight Checks tool in the pyRevit toolbar.
 
-The code for each check lives in the checks folder of each pyRevit extension 
-[Main Tools Extension](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024/extensions/pyRevitTools.extension/checks)
+The code for each check resides in the `checks` folder of each pyRevit extension.
 
+You can find an example in the [Main Tools Extension](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024/extensions/pyRevitTools.extension/checks).
 
-On your conmputer, it will usually live in `%appdata%\pyRevit-Master\extensions\pyRevitTools.extension\checks`
+On your computer, it is usually located at: 
+```%appdata%\pyRevit-Master\extensions\pyRevitTools.extension\checks```
 
 ## Conditions
 ___
 
 ### Who can enter?
 
-- Simple: **Anyone** even pyRevit geeks and contributors (but they will be excluded from the jury 🤔)
+- Simple: **Anyone**! Even pyRevit enthusiasts and contributors can participate (though they will be excluded from the jury 🤔).
 
 ### How to submit your entry?
 
-- Create a PR against the [preflight checks hackathon 2024 branch](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024)
-  - Advanced users should know about it, make their own fork and PR against the upstream one
-  - NOOB could create a new check like so:
+- Create a PR against the [Preflight Checks Hackathon 2024 branch](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024).
+  - Advanced users can create their own fork and submit a PR against the upstream one.
+  - Beginners can create a new check as follows:
 
     <details>
-    <summary>Explaination</summary>
+    <summary>Explanation</summary>
   
       ![pfchckthn](https://github.com/user-attachments/assets/d33680aa-6335-4529-a1b6-c3abfdef7c47)
 
     </details>
 
-  - If you have no idea what we are talking about, send your code to hello@pyrevitlab.io with your name, and we will take care of it.
-- Show off on the forum in the [Tools - Preflight Checks Hackathon Category](https://discourse.pyrevitlabs.io/c/tools/hackathon-preflight-checks-2024/13)
-
+  - If you’re unsure about the process, send your code to hello@pyrevitlab.io with your name, and we’ll take care of it.
+  
+- Show off your work on the forum in the [Tools - Preflight Checks Hackathon Category](https://discourse.pyrevitlabs.io/c/tools/hackathon-preflight-checks-2024/13).
 
 ### Timeline
 
-⚠️ Deadline for submission is**November 1st, 2024**
+⚠️ The deadline for submissions is **November 1st, 2024**.
 
 ### Categories & Prizes
 
-**All relevant entry will be added to the pyRevit official preflight checks**
+**All relevant entries will be added to the official pyRevit preflight checks.**
 
-- 🤩 **Keep It Simple** - 25$ Gift Card or Equivalent
+- 🤩 **Keep It Simple** - $25 Gift Card or Equivalent
 
-A check that is both simple and smart.
+  A check that is both simple and smart.
 
-- 💻 **Code Elegance** - 50$ Gift Card or Equivalent
+- 💻 **Code Elegance** - $50 Gift Card or Equivalent
 
-It can be an artistic code or the most pythonic one
+  Code that is either artistically elegant or highly Pythonic.
 
-- 🚀 **Most Advanced** - 100$ Gift Card or Equivalent
+- 🚀 **Most Advanced** - $100 Gift Card or Equivalent
 
-A complete check that push the boundaries of quality control
+  A complete check that pushes the boundaries of quality control.
 
-- 🧑‍🚀💻⭐ **Best of the best** - 200$ Gift Card or Equivalent
+- 🧑‍🚀💻⭐ **Best of the Best** - $200 Gift Card or Equivalent
 
-Simple, Elegant, Advanced and maybe smarter that the other, the contestant created a library for its check making them more reusable.
-Code improvements to the Preflight Checks Tools are welcomed
+  Simple, elegant, advanced, and maybe even smarter than the others—this entry might include a library that makes the check more reusable. Code improvements to the Preflight Checks Tools are also welcome.
 
 ### Jury
 
-- Ehsan, Jean-Marc, AndreaG and Dosymep + others willing to participate in the evaluation process
+- Ehsan, Jean-Marc, AndreaG, and Dosymep, plus others willing to participate in the evaluation process.
 
-
-## How to make one?
+## How to create a preflight check?
 ___
 
-1. Understand the structure, see the explaination below
-2. Use the template
-3. Try to use the [charts](https://pyrevitlabs.notion.site/Visualizing-Data-fd778a0b67354ff581aa340619b87803#2c9df15f46874261b3f82b0602e092e2) to make your data look good
+1. Understand the structure; see the explanation below.
+2. Use the template.
+3. Try to use [charts](https://pyrevitlabs.notion.site/Visualizing-Data-fd778a0b67354ff581aa340619b87803#2c9df15f46874261b3f82b0602e092e2) to make your data look good.
 
 ### Structure
 
-- boiler plate
-- document declaration
-- definitions of all the data you are collecting in the revit models
-- main definition calling all the previous ones, and ordering and making the data output look good.
-- Class with pre and post definition in cas you need to clean up after the preflight checks.
-  - It contains the description of what your preflight checks does
-  - its title
-  - its author
-  - the startTest def that calls the check-model definition 
+- Boilerplate
+- Document declaration
+- Definitions of all the data you are collecting in the Revit models
+- Main definition calling all the previous ones, organizing the data, and making the output look good
+- Class with pre- and post-definitions in case you need to clean up after the preflight checks
+  - It contains the description of what your preflight check does
+  - Its title
+  - Its author
+  - The `startTest` method that calls the `check_model` definition
 
 ### Template
 
-the file needs to be named: releveanName-**check.py**
-The last part being the most important one, as the parser looks for the check.py in the folder.
+The file needs to be named: `relevantName-**check.py**`, with the last part being the most important, as the parser looks for `check.py` in the folder.
 
-
->Boiler plate
+> Boilerplate
 
 ```python
 # -*- coding: UTF-8 -*-
