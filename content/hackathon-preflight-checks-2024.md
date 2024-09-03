@@ -7,7 +7,7 @@ ___
 
 It can take look like this:
 
-https://github.com/user-attachments/assets/d5b52b2a-47ac-4782-8a42-b550f0cf08a5
+{{< youtube vMbWabf4dTE >}}
 
 **Collect data from the actual documents or revit links, export the data collected for later use and comparison with historical data, ...**
 
@@ -43,7 +43,7 @@ ___
   - Advanced users can create their own fork and submit a PR against the upstream one.
   - Beginners can create a new check as follows:
 
-https://github.com/user-attachments/assets/6cea831d-af3e-483b-b789-09cf983e2fc9
+{{< youtube NrEiK3RqsRU >}}
 
   - If you’re unsure about the process, send your code to hello@pyrevitlab.io with your name, and we’ll take care of it.
   
