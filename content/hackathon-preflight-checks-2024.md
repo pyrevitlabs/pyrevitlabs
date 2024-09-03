@@ -3,18 +3,17 @@
 ## What is a preflight check in pyRevit?
 ___
 
-Preflight Checks are Python scripts processed through the Preflight Checks tool in the pyRevit toolbar.
+**Preflight Checks** are Python scripts processed through the **Preflight Checks tool** in the pyRevit toolbar.
 
 It can take look like this:
 
-![pfc-examples](https://github.com/user-attachments/assets/dbb2aa1c-02b7-406e-b338-eb332708a2ce)
+https://github.com/user-attachments/assets/d5b52b2a-47ac-4782-8a42-b550f0cf08a5
 
-Collect data from the actual documents or revit links, export the data collected for later use and comparison with historical data, ... 
-
+**Collect data from the actual documents or revit links, export the data collected for later use and comparison with historical data, ...**
 
 The code for each check resides in the `checks` folder of each pyRevit extension.
 
-You can find an example in the [Main Tools Extension](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024/extensions/pyRevitTools.extension/checks).
+You can find examples in the [Main Tools Extension](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024/extensions/pyRevitTools.extension/checks).
 
 On your computer, it is usually located at:
 
@@ -44,12 +43,7 @@ ___
   - Advanced users can create their own fork and submit a PR against the upstream one.
   - Beginners can create a new check as follows:
 
-    <details>
-    <summary>Explanation</summary>
-  
-      ![pfchckthn](https://github.com/user-attachments/assets/d33680aa-6335-4529-a1b6-c3abfdef7c47)
-
-    </details>
+https://github.com/user-attachments/assets/6cea831d-af3e-483b-b789-09cf983e2fc9
 
   - If you’re unsure about the process, send your code to hello@pyrevitlab.io with your name, and we’ll take care of it.
   
