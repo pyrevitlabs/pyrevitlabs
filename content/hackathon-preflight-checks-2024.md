@@ -1,17 +1,18 @@
-![]()
-
-
-# Preflight Checks Hackathon
+# 🎉 Preflight Checks Hackathon 2024
 
 ## What is a preflight check in pyRevit?
 
 Prelflight Checks are python scripts parsed through the preflight checks tools in the pyRevit toolbar.
 
-The code for each check lives in the checks folder of each pyRevit extension: https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024/extensions/pyRevitTools.extension/checks
+The code for each check lives in the checks folder of each pyRevit extension: [Main Tools Extension](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024/extensions/pyRevitTools.extension/checks)
 
-On your conmputer, it will usually live in %appdata%\pyRevit-Master\extensions\pyRevitTools.extension\checks
+On your conmputer, it will usually live in `%appdata%\pyRevit-Master\extensions\pyRevitTools.extension\checks`
 
 ## How to make one?
+
+1. Understand the structure, see the explaination below
+2. Use the template
+3. Try to use the [charts](https://pyrevitlabs.notion.site/Visualizing-Data-fd778a0b67354ff581aa340619b87803#2c9df15f46874261b3f82b0602e092e2) to make your data look good
 
 ### Structure
 
@@ -26,6 +27,10 @@ On your conmputer, it will usually live in %appdata%\pyRevit-Master\extensions\p
   - the startTest def that calls the check-model definition 
 
 ### Template
+
+the file needs to be named: releveanName-**check.py**
+The last part being the most important one, as the parser looks for the check.py in the folder.
+
 <details>
   <summary>Boiler plate</summary>
   
@@ -37,8 +42,6 @@ from pyrevit.preflight import PreflightTestCase
 doc = DOCS.doc
 ```
 </details>
-
-
 
 <details>
   <summary>🔦 Here, each definition collects info about specific Revit elements. Sample definitions to collect data about grids 👇</summary>
@@ -149,14 +152,55 @@ class ModelChecker(PreflightTestCase):
 ```
 </details>
 
-## Who can enter?
+## Conditions
 
-## How to submit your entry?
+### Who can enter?
 
-## Timeline
+- Simple: **Anyone** even pyRevit geeks and contributors (but they will be excluded from the jury 🤔)
 
-## Prizes
+### How to submit your entry?
 
-## FAQ
+- Create a PR against the [preflight checks hackathon 2024 branch](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024)
+  - Advanced users should know about it, make their own fork and PR against the upstream one
+  - NOOB could create a new check like so:
 
-- How to get support
+    <details>
+    <summary>Explaination</summary>
+  
+      ![pfchckthn](https://github.com/user-attachments/assets/d33680aa-6335-4529-a1b6-c3abfdef7c47)
+
+    </details>
+
+  - If you have no idea what we are talking about, send your code to hello@pyrevitlab.io with your name, and we will take care of it.
+- Show off on the forum in the [Tools - Preflight Checks Hackathon Category](https://discourse.pyrevitlabs.io/c/tools/hackathon-preflight-checks-2024/13)
+
+
+### Timeline
+
+⚠️ Deadline for submission is**November 1st, 2024**
+
+### Categories & Prizes
+
+**All relevant entry will be added to the pyRevit official preflight checks**
+
+- 🤩 **Keep It Simple** - 25$ Gift Card or Equivalent
+
+A check that is both simple and smart.
+
+- 💻 **Code Elegance** - 50$ Gift Card or Equivalent
+
+It can be an artistic code or the most pythonic one
+
+- 🚀 **Most Advanced** - 100$ Gift Card or Equivalent
+
+A complete check that push the boundaries of quality control
+
+- 🧑‍🚀💻⭐ **Best of the best** - 200$ Gift Card or Equivalent
+
+Simple, Elegant, Advanced and maybe smarter that the other, the contestant created a library for its check making them more reusable.
+Code improvements to the Preflight Checks Tools are welcomed
+
+### Jury
+
+- Ehsan, Jean-Marc, AndreaG and Dosymep + others willing to participate in the evaluation process
+  
