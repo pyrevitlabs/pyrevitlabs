@@ -20,6 +20,17 @@ On your computer, it is usually located at:
 
 `%appdata%\pyRevit-Master\extensions\pyRevitTools.extension\checks`
 
+## Goal
+___
+
+- Make people aware of the tool
+- Make people use it
+- Create badass preflight checks for the community
+- Make it the one tool for QA QC, built by the community
+- Modularize the checks
+- Add more functionalities
+- ...
+
 ## Conditions
 ___
 
