@@ -205,4 +205,10 @@ class ModelChecker(PreflightTestCase):
         pass
 ```
 
+## FAQ
+___
+
+- Where to ask for help?
+
+  on the [pyRevit forum](https://discourse.pyrevitlabs.io/)
   
