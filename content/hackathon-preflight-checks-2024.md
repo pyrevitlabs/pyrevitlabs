@@ -1,16 +1,19 @@
 # 🎉 Preflight Checks Hackathon 2024
+___
 
 ## What is a preflight check in pyRevit?
+___
 
 Prelflight Checks are python scripts parsed through the preflight checks tools in the pyRevit toolbar.
 
-The code for each check lives in the checks folder of each pyRevit extension: 
+The code for each check lives in the checks folder of each pyRevit extension 
 [Main Tools Extension](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024/extensions/pyRevitTools.extension/checks)
 
 
 On your conmputer, it will usually live in `%appdata%\pyRevit-Master\extensions\pyRevitTools.extension\checks`
 
 ## How to make one?
+___
 
 1. Understand the structure, see the explaination below
 2. Use the template
@@ -155,6 +158,7 @@ class ModelChecker(PreflightTestCase):
 </details>
 
 ## Conditions
+___
 
 ### Who can enter?
 
