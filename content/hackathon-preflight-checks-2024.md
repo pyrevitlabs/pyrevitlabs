@@ -5,6 +5,13 @@ ___
 
 Preflight Checks are Python scripts processed through the Preflight Checks tool in the pyRevit toolbar.
 
+It can take look like this:
+
+![pfc-examples](https://github.com/user-attachments/assets/dbb2aa1c-02b7-406e-b338-eb332708a2ce)
+
+Collect data from the actual documents or revit links, export the data collected for later use and comparison with historical data, ... 
+
+
 The code for each check resides in the `checks` folder of each pyRevit extension.
 
 You can find an example in the [Main Tools Extension](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024/extensions/pyRevitTools.extension/checks).
