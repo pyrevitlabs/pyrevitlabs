@@ -9,8 +9,9 @@ The code for each check resides in the `checks` folder of each pyRevit extension
 
 You can find an example in the [Main Tools Extension](https://github.com/pyrevitlabs/pyRevit/tree/Preflight-Checks_Hackathon_2024/extensions/pyRevitTools.extension/checks).
 
-On your computer, it is usually located at: 
-```%appdata%\pyRevit-Master\extensions\pyRevitTools.extension\checks```
+On your computer, it is usually located at:
+
+`%appdata%\pyRevit-Master\extensions\pyRevitTools.extension\checks`
 
 ## Conditions
 ___
