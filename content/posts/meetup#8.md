@@ -17,10 +17,5 @@ weight = 1
 - ...
 
 
-[Add to Google Calendar](https://us06web.zoom.us/meeting/tZYrdO-tqD4jHdDt7RNt1pXm1Y5aVS0ILecD/calendar/google/add)
-
-[Add to Outlook](https://us06web.zoom.us/meeting/tZYrdO-tqD4jHdDt7RNt1pXm1Y5aVS0ILecD/ics)
-
-or [direct link](https://us06web.zoom.us/j/82636565974?pwd=QqJbMafZtzbV8EYyTkYnXu6upUx0Lr.1)
-
+last minute change: https://meet.jit.si/LovingGoatsBreatheHard
 
