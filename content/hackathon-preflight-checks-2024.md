@@ -113,7 +113,7 @@ doc = DOCS.doc
 >🔦 Here, each definition collects info about specific Revit elements. Sample definitions to collect data about grids 👇
   
 ```python
-def grids_collector(document):
+def grids_collector(document=doc):
     grids = DB.FilteredElementCollector(document).OfCategory(DB.BuiltInCategory.OST_Grids).WhereElementIsNotElementType()
     return grids
 
@@ -166,16 +166,16 @@ def grids_scoped(document=doc):
 >Main definition where elements data is organized and where you make it look good
   
 ```python
-def check_model(doc, output):
+def check_model(document = doc):
     output = script.get_output()
     output.close_others()
     output.print_md("# Grids Data Lister")
-    count = grids_count()
+    count = grids_count(document)
     output.print_md("## Number of grids: {0}".format(count))
-    names = grids_names() # [1,2,3,4]
-    types = grids_types() # [bubble, bubble, bubble, bubble]
-    pinned = grids_pinned() # [True, False, True, False]
-    scoper = grids_scoped() # [Name of scope, Name of scope, Name of scope, Name of scope]
+    names = grids_names(document) # [1,2,3,4]
+    types = grids_types(document) # [bubble, bubble, bubble, bubble]
+    pinned = grids_pinned(document) # [True, False, True, False]
+    scoper = grids_scoped(document) # [Name of scope, Name of scope, Name of scope, Name of scope]
     # 🔦 Here, we output the data in a table but you could use the charts modules to get better looking dashboard like in the https://github.com/pyrevitlabs/pyRevit/blob/Preflight-Checks_Hackathon_2024/extensions/pyRevitTools.extension/checks/modelchecker_check.py
     output.print_table(table_data=zip(names, types, pinned, scoper), title="Grids", columns=["Name", "Type", "Pinned", "Scope Box"])
 ```
@@ -198,19 +198,11 @@ class ModelChecker(PreflightTestCase):
     name = "Grids Data Lister"
     author = "Jean-Marc Couffin"
 
-    def setUp(self, doc, output):
-        pass
 
-    def startTest(self, doc, output):
+    def startTest(self, doc):
         #🔦 This is where you call the check_model definition 👇
-        checkModel(doc, output)
+        checkModel(doc)
 
-
-    def tearDown(self, doc, output):
-        pass
-
-    def doCleanups(self, doc, output):
-        pass
 ```
 
 ## FAQ
