@@ -1,5 +1,36 @@
 # 🎉 Preflight Checks Hackathon 2024
 
+## Results
+**Here is the list of the winners.**
+
+3 Contestants, a bit lame to have had so little engagement, but that is a first, and the submissions were interesting, and some went over the top in terms of improvement of their original submission @tayOthman
+
+### :star_struck: Keep It Simple - $25 Gift Card or Equivalent
+A check that is both simple and smart.
+@andreasd811 you earned it. And I liked the fact this could scale eventually or become its own tool :clap:
+
+### :computer: Interesting Code Idea Elegance- $50 Gift Card or Equivalent
+I changed a bit this category because… I can ;p
+@KSalmon you earned it! The check makes sense, and while its complexity is average, it has interesting ideas in it. It would require some love, but this is a good first one
+
+### :rocket: Most Advanced potential - $100 Gift Card or Equivalent
+A complete check that pushes the boundaries of quality control.
+@andreasd811 you earned it for its potential. I see the tool as an interesting validation tool.
+
+### :astronaut::computer::star: Best of the Best - $200 Gift Card or Equivalent
+Simple, elegant, advanced, and maybe even smarter than the others—this entry might include a library that makes the check more reusable. Code improvements to the Preflight Checks Tools are also welcome.
+@tayOthman the tool is interesting and your involvement was outstanding! Good job :rocket:
+
+
+Thanks for your engagement!
+
+### Best judges :rocket:
+@sanzoghenzo you bring so much to the project with your knack and expert eyes for code quality/etiquette! Thank you man :parachute:
+@dosymep you are not bad too :wink:
+
+
+___
+
 ## What is a preflight check in pyRevit?
 ___
 
