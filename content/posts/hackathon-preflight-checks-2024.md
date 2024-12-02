@@ -1,3 +1,12 @@
++++ 
+date = 2024-12-02
+draft = false 
+title = 'Preflight Checks Hackathon 2024' 
+weight = 1 
+[params]
+  author = 'Jean-Marc Couffin'
++++ 
+
 # 🎉 Preflight Checks Hackathon 2024
 
 ## Results
