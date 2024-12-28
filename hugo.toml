@@ -54,7 +54,7 @@ style = "github-dark"
   name = "Documentation"
   icon = "fa-solid fa-book fa-2x"
   weight = 4
-  url = "https://wiki.pyrevitlabs.io/"
+  url = "http://wiki.pyrevitlabs.io/"
 [[params.social]]
   name = "API Docs"
   icon = "fa-solid fa-code fa-2x"
@@ -64,7 +64,7 @@ style = "github-dark"
   name = "Developer Docs"
   icon = "fa-regular fa-keyboard fa-2x"
   weight = 6
-  url = "https://devdocs.pyrevitlabs.io/"
+  url = "http://devdocs.pyrevitlabs.io/"
 [[params.social]]
   name = "pyRevit YouTube Channel"
   icon = "fa-brands fa-youtube fa-2x"
