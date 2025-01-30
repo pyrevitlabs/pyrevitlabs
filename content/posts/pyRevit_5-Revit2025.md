@@ -2,7 +2,6 @@
 date = 2024-08-14 
 draft = false 
 title = 'pyRevit 5 - Revit 2025' 
-weight = 1 
 [params]
   author = 'Jean-Marc Couffin'
 +++
