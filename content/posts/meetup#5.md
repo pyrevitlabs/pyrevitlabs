@@ -2,7 +2,6 @@
 date = 2024-05-13
 draft = false
 title = 'pyRevit Meetup #5'
-weight = 10
 [params]
   author = 'Jean-Marc Couffin'
 +++
