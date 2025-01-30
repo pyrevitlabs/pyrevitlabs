@@ -2,7 +2,6 @@
 date = 2024-05-14
 draft = false
 title = 'Support us on Open Collective'
-weight = 10
 [params]
   author = 'Jean-Marc Couffin'
 +++
