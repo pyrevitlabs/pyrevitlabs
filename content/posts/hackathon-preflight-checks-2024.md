@@ -2,7 +2,6 @@
 date = 2024-12-02
 draft = false 
 title = 'Preflight Checks Hackathon 2024' 
-weight = 5
 [params]
   author = 'Jean-Marc Couffin'
 +++ 
