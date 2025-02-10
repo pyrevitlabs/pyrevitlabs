@@ -11,6 +11,12 @@
 
 # Communitiy Extensions
 
+
+## Disclaimer
+
+The content and code provided in this post are offered for informational and educational purposes only and are provided "as is" without any guarantees or warranties, express or implied. By using any of the material contained herein, you agree that you do so at your own risk. The author(s) assume no responsibility or liability for any errors, omissions, or any adverse effects resulting from the use of this content or code. Always test and validate any code in a safe environment before implementing it in a live or production system, and consult professional advice if needed.
+
+
 | Title                                | Description                                                                                                           | Author               | Type                                       | Repository |
 |--------------------------------------|-----------------------------------------------------------------------------------------------------------------------|----------------------|-------------------------------------------|------------|
 | pyRevitMEP                           | A pyRevit extension tailored for MEP workflows in Revit.                                                              | CyrilWaechter       | external with link from pyRevit extensions | [pyRevitMEP](https://github.com/CyrilWaechter/pyRevitMEP) |
