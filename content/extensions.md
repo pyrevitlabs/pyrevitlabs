@@ -1,4 +1,6 @@
-_to be added to the list below, make a PR againt the following file https://github.com/pyrevitlabs/pyrevitlabs/blob/main/content/extensions.md_
+
+**to be added to the list below, make a PR againt the following file https://github.com/pyrevitlabs/pyrevitlabs/blob/main/content/extensions.md**
+
 
 # Builtin Extensions
 
