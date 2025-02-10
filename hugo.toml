@@ -89,5 +89,5 @@ style = "github-dark"
   url  = "team"
 [[menu.main]]
   name = "Community Extensions"
-  weight = 3
+  weight = 4
   url  = "extensions"
