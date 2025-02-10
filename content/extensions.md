@@ -1,8 +1,8 @@
 
 # Builtin Extensions
 
-| Title                                | Description                                                                                                           | Author               | Type                                       | Repository |
-|--------------------------------------|-----------------------------------------------------------------------------------------------------------------------|----------------------|-------------------------------------------|------------|
+| <div style="width:100px">Title</div> | <div style="width:250px">Description</div> | <div style="width:290px">Author</div> | <div style="width:100px">Type</div> | <div style="width:100px">Repository</div> |
+|---|---|---|---|---|
 | pyRevit Tools                        | A scripting library for Autodesk Revit that provides a rapid development environment for creating custom tools.      | Ehsan Iran-Nejad / pyrevitlabs | builtin | [pyRevit](https://github.com/pyrevitlabs/pyRevit) |
 | pyRevitBundlesCreatorExtension       | Helps in creating and managing bundles of scripts and tools for pyRevit.                                             | Jean-Marc Couffin   | builtin | [pyRevitBundlesCreatorExtension](https://github.com/pyrevitlabs/pyRevit/tree/develop/extensions/pyRevitBundlesCreatorExtension.extension) |
 | pyRevitTutor                         | An interactive extension offering tutorials and examples for pyRevit users.                                          | pyrevitlabs         | builtin | [pyRevitTutor](https://github.com/pyrevitlabs/pyRevit/tree/develop/extensions/pyRevitTutor.extension) |
