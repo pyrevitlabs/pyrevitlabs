@@ -13,7 +13,6 @@
 
 | Title                                | Description                                                                                                           | Author               | Type                                       | Repository |
 |--------------------------------------|-----------------------------------------------------------------------------------------------------------------------|----------------------|-------------------------------------------|------------|
-
 | pyRevitMEP                           | A pyRevit extension tailored for MEP workflows in Revit.                                                              | CyrilWaechter       | external with link from pyRevit extensions | [pyRevitMEP](https://github.com/CyrilWaechter/pyRevitMEP) |
 | pyrevitplus                          | Extends the core functionality of pyRevit with extra features and tools.                                              | gtalarico           | external with link from pyRevit extensions | [pyrevitplus](https://github.com/gtalarico/pyrevitplus) |
 | pytiba                               | An extension focused on streamlining specific Revit tasks.                                                            | tillbaum            | external with link from pyRevit extensions | [pytiba](https://github.com/tillbaum/pytiba) |
