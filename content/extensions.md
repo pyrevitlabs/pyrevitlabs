@@ -20,8 +20,7 @@
         }
     </style>
     
-    <section class="container page">
-        <article>
+
            <h1>Builtin Extensions</h1>
             <div class="table-responsive">
             <table class="extensions-table">
@@ -137,5 +136,4 @@
                 </tbody>
             </table>
         </div>
-        </article>
-    </section>
+
