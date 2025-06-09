@@ -1,5 +1,5 @@
 +++ 
-date = 2025-06-10
+date = 2025-06-09
 draft = false 
 title = 'pyRevit @ BIMPulse - June 10th 2025' 
 [params]
