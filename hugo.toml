@@ -4,8 +4,10 @@ theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
-paginate = 20
 enableRobotsTXT = true
+
+[pagination]
+paginate = 20
 
 [markup.highlight]
 style = "github-dark"
