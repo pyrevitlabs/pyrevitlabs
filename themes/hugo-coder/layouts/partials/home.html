@@ -97,7 +97,10 @@ button {
     </div>
     {{ partialCached "home/author.html" . }}
     {{ partialCached "home/social.html" . }}
-    [![GitHub issues](https://img.shields.io/github/issues/pyrevitlabs/pyRevit.svg?style=for-the-badge)](https://github.com/pyrevitlabs/pyRevit/issues)
+    <a href="https://github.com/pyrevitlabs/pyRevit/issues">
+        <img src="https://img.shields.io/github/issues/pyrevitlabs/pyRevit.svg?style=for-the-badge" 
+             alt="GitHub issues">
+    </a>
   </div>
   {{ partialCached "home/extensions.html" . }}
 </section>
