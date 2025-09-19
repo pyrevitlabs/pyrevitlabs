@@ -6,8 +6,16 @@ defaultcontentlanguage = "en"
 
 enableRobotsTXT = true
 
+# Suppress warnings
+ignoreLogs = ['warning-goldmark-raw-html']
+
 [pagination]
 paginate = 20
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [markup.highlight]
 style = "github-dark"

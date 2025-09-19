@@ -13,9 +13,9 @@
   }
 
   .persona-container {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .column-l {
@@ -25,41 +25,45 @@
   }
 
   .column-r {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 2em;
-  align-items: flex-end; /* Ensures alignment to the right */
-}
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 2em;
+    align-items: flex-end;
+    /* Ensures alignment to the right */
+  }
 
-button {
-  display: block;
-  max-width: 300px; /* Controls the button width */
-  height: auto; /* Adjust height to fit content */
-  border-radius: 1rem;
-  border: none;
-  font-size: 100%;
-  text-align: center;
-  background-color: #377bc8;
-  text-decoration: none;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  padding: 0.5rem;
-  margin-bottom: 1rem; /* Space between buttons */
-}
+  button {
+    display: block;
+    max-width: 300px;
+    /* Controls the button width */
+    height: auto;
+    /* Adjust height to fit content */
+    border-radius: 1rem;
+    border: none;
+    font-size: 100%;
+    text-align: center;
+    background-color: #377bc8;
+    text-decoration: none;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    /* Space between buttons */
+  }
 
-.wip-b {
-  font-size: 80%;
-  background-color: rgb(255, 186, 82);
-  padding: 1rem;
-  margin-top: 10px;
-  border-radius: 1rem;
-  border: none;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
+  .wip-b {
+    font-size: 80%;
+    background-color: rgb(255, 186, 82);
+    padding: 1rem;
+    margin-top: 10px;
+    border-radius: 1rem;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
 
   button:hover {
     background-color: #377bc881;
@@ -75,8 +79,6 @@ button {
     font-size: 0.65em;
     color: #377bc8;
   }
-
-
 </style>
 <section class="container centered">
   <div class="about">
@@ -97,22 +99,28 @@ button {
     </div>
     {{ partialCached "home/author.html" . }}
     {{ partialCached "home/social.html" . }}
+    <br>
+
     <a href="https://github.com/pyrevitlabs/pyRevit/issues">
-        <img src="https://img.shields.io/github/issues/pyrevitlabs/pyRevit.svg?style=for-the-badge" 
-             alt="GitHub issues">
+      <img src="https://img.shields.io/github/issues/pyrevitlabs/pyRevit.svg?style=for-the-badge" alt="GitHub issues">
     </a>
-        <a href="https://github.com/pyrevitlabs/pyRevit/pulls">
-        <img src="https://img.shields.io/github/issues-pr/pyrevitlabs/pyRevit.svg?style=for-the-badge&color=0062c4"
-            alt="GitHub pull requests">
+    <div></div>
+    <a href="https://github.com/pyrevitlabs/pyRevit/pulls">
+      <img src="https://img.shields.io/github/issues-pr/pyrevitlabs/pyRevit.svg?style=for-the-badge&color=0062c4"
+        alt="GitHub pull requests">
     </a>
+    <div></div>
     <a href="https://opencollective.com/pyrevitlabs">
-        <img src="https://img.shields.io/opencollective/all/pyrevitlabs.svg?style=for-the-badge&color=9d6b99"
-            alt="Open Collective">
+      <img src="https://img.shields.io/opencollective/all/pyrevitlabs.svg?style=for-the-badge&color=9d6b99"
+        alt="Open Collective">
     </a>
+    <div></div>
     <a href="https://discourse.pyrevitlabs.io">
-        <img src="https://img.shields.io/discourse/topics?server=https%3A%2F%2Fdiscourse.pyrevitlabs.io&style=for-the-badge&color=ff9a2e"
-            alt="Forum">
+      <img
+        src="https://img.shields.io/discourse/topics?server=https%3A%2F%2Fdiscourse.pyrevitlabs.io&style=for-the-badge&color=ff9a2e"
+        alt="Forum">
     </a>
+
   </div>
   {{ partialCached "home/extensions.html" . }}
 </section>
