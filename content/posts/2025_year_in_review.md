@@ -8,7 +8,7 @@ author = 'Jean-Marc Couffin'
 +++
 
 
-# pyRevit — 2025 Year in Review
+# pyRevit - 2025 Year in Review
 
 **2025 was a year of consolidation, technical progress, and growing contributor momentum for pyRevit.**  
 Across releases, pull requests, and forum discussions, the project continued to mature while welcoming new contributors and laying the groundwork for the next major platform transition.
