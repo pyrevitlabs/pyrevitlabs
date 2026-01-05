@@ -1,4 +1,11 @@
-+++ date = 2026-01-06 draft = false title = '2025 pyRevit year in review' [params] author = 'Jean-Marc Couffin' +++
++++
+date = 2026-01-06
+draft = false
+title = '2025 pyRevit year in review'
+
+[params]
+author = 'Jean-Marc Couffin'
++++
 
 
 # pyRevit — 2025 Year in Review
