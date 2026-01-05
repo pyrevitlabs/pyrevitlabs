@@ -129,3 +129,6 @@ Even small recurring contributions make a real difference — and directly suppo
 
 **Thank you to everyone who contributed in 2025 — through code, discussions, testing, funding, or support.**  
 Here’s to an ambitious and exciting 2026. 🚀
+
+
+any mistakes? blame chatgpt! :devil:
