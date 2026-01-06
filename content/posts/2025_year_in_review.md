@@ -1,5 +1,5 @@
 +++
-date = 2026-01-06
+date = 2026-01-05
 draft = false
 title = '2025 pyRevit year in review'
 
