@@ -1,0 +1,51 @@
+name: Bump Hugo version
+
+on:
+  schedule:
+    - cron: "0 8 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Check for newer Hugo release
+        id: check
+        run: |
+          CURRENT=$(grep 'HUGO_VERSION:' .github/workflows/hugo.yaml | head -1 | awk '{print $2}')
+          LATEST=$(curl -fsSL https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name' | sed 's/^v//')
+          echo "current=${CURRENT}" >> "${GITHUB_OUTPUT}"
+          echo "latest=${LATEST}" >> "${GITHUB_OUTPUT}"
+          if [ "$(printf '%s\n' "${CURRENT}" "${LATEST}" | sort -V | tail -1)" = "${LATEST}" ] && [ "${CURRENT}" != "${LATEST}" ]; then
+            echo "update=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "update=false" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Update pinned Hugo version
+        if: steps.check.outputs.update == 'true'
+        run: |
+          sed -i "s/HUGO_VERSION: .*/HUGO_VERSION: ${{ steps.check.outputs.latest }}/" .github/workflows/hugo.yaml
+          sed -i "s/HUGO_VERSION: .*/HUGO_VERSION: ${{ steps.check.outputs.latest }}/" .github/workflows/hugo-pr.yaml
+
+      - name: Create pull request
+        if: steps.check.outputs.update == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/bump-hugo-${{ steps.check.outputs.latest }}
+          commit-message: "chore(ci): bump Hugo to ${{ steps.check.outputs.latest }}"
+          title: "chore(ci): bump Hugo to ${{ steps.check.outputs.latest }}"
+          body: |
+            Automated Hugo version bump from `${{ steps.check.outputs.current }}` to `${{ steps.check.outputs.latest }}`.
+
+            Release notes: https://github.com/gohugoio/hugo/releases/tag/v${{ steps.check.outputs.latest }}
+
+            Please verify the PR build passes before merging.
