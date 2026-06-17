@@ -142,8 +142,10 @@ fetchLatestArtifact()
             const data = await response.json();
             
             if (response.ok) {
-                // Assuming the first release is the latest
-                const latestRelease = data[0];
+                const latestRelease = data.find(release => release.name && release.name.startsWith('pyRevit'));
+                if (!latestRelease) {
+                    return null;
+                }
                 return {
                     html_url: latestRelease.html_url,
                     tag_name: latestRelease.tag_name,
