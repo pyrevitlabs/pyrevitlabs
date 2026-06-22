@@ -96,20 +96,26 @@ function rememberTheme(theme) {
     localStorage.setItem('colorscheme', theme);
 }
 
-// Fetch the latest artifact from the GitHub Actions API fro WIP installer on the develop branch
+// Fetch the latest WIP installer artifact from the GitHub Actions API
 async function fetchLatestArtifact() {
-    const url = `https://api.github.com/repos/pyrevitlabs/pyRevit/actions/artifacts`;
+    const url = `https://api.github.com/repos/pyrevitlabs/pyRevit/actions/artifacts?per_page=100`;
     try {
         const response = await fetch(url);
         const data = await response.json();
         
         if (response.ok) {
-            // check the latest artifacts that are from the develop head_branch
-            const latestArtifact = data.artifacts.find(artifact => artifact.workflow_run.head_branch === 'develop');
+            const latestArtifact = data.artifacts.find(artifact =>
+                artifact.name &&
+                artifact.name.startsWith('pyrevit-wip-installers') &&
+                !artifact.expired &&
+                artifact.workflow_run
+            );
+            if (!latestArtifact) {
+                return null;
+            }
             return {
-                url: latestArtifact.url.split('{')[0].split('/actions/artifacts/')[1],
+                id: latestArtifact.id,
                 run_id: latestArtifact.workflow_run.id,
-                head_branch: latestArtifact.workflow_run.head_branch,
             };
         } else {
             throw new Error(data.message);
@@ -123,11 +129,11 @@ async function fetchLatestArtifact() {
 fetchLatestArtifact()
     .then(artifact => {
         if (artifact) {
-            // reconstruct the download url from https://github.com/pyrevitlabs/pyRevit/actions/runs/9252590255/artifacts/1540428578
-            const WIPdownloadUrl = `https://github.com/pyrevitlabs/pyRevit/actions/runs/${artifact.run_id}/artifacts/${artifact.url}`;
-            // replace the download link in the page from WIPdownloadUrl to the const
+            const WIPdownloadUrl = `https://github.com/pyrevitlabs/pyRevit/actions/runs/${artifact.run_id}/artifacts/${artifact.id}`;
             const downloadLink = document.querySelector('.WIPdownloadUrl');
-            downloadLink.href = WIPdownloadUrl;
+            if (downloadLink) {
+                downloadLink.href = WIPdownloadUrl;
+            }
         }
     })
     .catch(error => {
