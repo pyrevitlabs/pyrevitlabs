@@ -74,7 +74,7 @@ Foster + Partners reached out with questions about deploying PyRevit in a larger
 
 For someone who had once wanted to work at those firms as an architect, suddenly getting emails from them because of a Revit tool felt surreal. Tools became a gateway to conversations that architecture alone had never opened.
 
-PyRevit grew through contributions from a small group of early collaborators, including Gui Talarico and Cereal on the MEP side. It also grew through a modular extension model: a tool could live in its own folder, bring its own dependencies, and disappear cleanly without breaking the rest of the interface.
+PyRevit grew through contributions from a small group of early collaborators, including Gui Talarico and Cyril Waechter on the MEP side. It also grew through a modular extension model: a tool could live in its own folder, bring its own dependencies, and disappear cleanly without breaking the rest of the interface.
 
 ## Sustainability Is Still the Hard Part
 
