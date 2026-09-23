@@ -6,7 +6,7 @@ title = 'pyRevit Origin'
   author = 'Jean-Marc Couffin'
 +++ 
 
-> this piece is the result of an interview of Ehsan Iran-Nejad, the creator of pyrevit, at Autodesk University 2026 in Vegas on the 17th of September, 2026
+> This piece is the result of an interview with Ehsan Iran-Nejad, the creator of pyrevit, at Autodesk University 2026 in Vegas on the 17th of September, 2026
 
 # A Revit Scripting Journey: From Secret Python Scripts to PyRevit
 
