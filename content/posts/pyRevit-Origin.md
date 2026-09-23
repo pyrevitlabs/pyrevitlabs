@@ -10,7 +10,7 @@ title = 'pyRevit Origin'
 
 # A Revit Scripting Journey: From Secret Python Scripts to PyRevit
 
-It started in 2013 with a move from Houston to Portland—and a slightly optimistic answer in a job interview.
+It started in 2013 with a move from Houston to Portland - and a slightly optimistic answer in a job interview.
 
 “Do you know Revit?”
 
@@ -34,7 +34,7 @@ A manager could ask for a change and a number, and the answer could come back al
 
 At first, there was understandable skepticism. People wanted to know whether the results could be trusted. So the scripts had to be explained: what they did, what data they used, and why the output was correct.
 
-But the value was obvious. Automation was not just a technical curiosity—it saved real time.
+But the value was obvious. Automation was not just a technical curiosity - it saved real time.
 
 ## Turning Scripts into Tools
 
@@ -44,7 +44,7 @@ The next step was to look inside Revit Python Shell itself, borrow the Python.NE
 
 Each button had a monster icon. Each monster had its own specialty: sheets, views, and other everyday Revit tasks. The approach was partly inspired by Pixar’s RenderMan, where individual characters represented different parts of the system.
 
-By late 2014, the project went onto GitHub—initially as a way to learn Git and GitHub.
+By late 2014, the project went onto GitHub - initially as a way to learn Git and GitHub.
 
 That was also when **Gui Talarico** found it.
 
@@ -56,13 +56,13 @@ PyRevit was ultimately rewritten from scratch four times. Version 4 became the b
 
 At first, PyRevit was an internal tool. A small group of advanced Revit users at LRS Architects got access to it, and usage was tracked to understand its impact.
 
-The team estimated how much time each tool saved. A few minutes here, five minutes there—it added up. That data helped make the case to management that automation could have a meaningful impact on project delivery.
+The team estimated how much time each tool saved. A few minutes here, five minutes there - it added up. That data helped make the case to management that automation could have a meaningful impact on project delivery.
 
 One of the biggest early milestones was Pattern Maker.
 
 The interior design team needed custom patterns but had limited access to an existing commercial tool. So a new solution was built from scratch, working backward from Revit pattern files and using vector math to generate the results.
 
-It did not solve every possible edge case perfectly. Sometimes the lines had to be “wiggled” slightly to fit the grid. But it worked—and interior designers loved it. Their elevations became more detailed, easier to manage, and visually stronger.
+It did not solve every possible edge case perfectly. Sometimes the lines had to be “wiggled” slightly to fit the grid. But it worked - and interior designers loved it. Their elevations became more detailed, easier to manage, and visually stronger.
 
 That was when PyRevit began to feel like more than a personal toolkit.
 
@@ -82,7 +82,7 @@ Today, PyRevit has a large community and is used in many high-profile architectu
 
 The biggest issue is not only writing code. It is communication: GitHub issues, forum discussions, LinkedIn messages, emails, feature requests, bug reports, and questions from firms trying to deploy it at scale.
 
-There is also the question of funding. Corporate donations have been limited, while infrastructure and contributor support still need to be covered. A steady income—even something like $500 per month—could make a real difference by rewarding the people doing the most work.
+There is also the question of funding. Corporate donations have been limited, while infrastructure and contributor support still need to be covered. A steady income - even something like $500 per month - could make a real difference by rewarding the people doing the most work.
 
 There are also bigger questions ahead:
 
