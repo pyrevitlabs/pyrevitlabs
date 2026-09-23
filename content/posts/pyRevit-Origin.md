@@ -42,7 +42,7 @@ Soon, a folder full of individual Python files became its own problem. Opening R
 
 The next step was to look inside Revit Python Shell itself, borrow the Python.NET execution approach, and build a startup script that loaded custom tools directly into the Revit interface.
 
-Each button had a monster icon. Each monster had its own specialty: sheets, views, and other everyday Revit tasks. The approach was partly inspired by Pixar’s RenderMan, where individual characters represented different parts of the system.
+Each button had a monster script/icon. Each monster had its own specialty: sheets, views, and other everyday Revit tasks. The approach was partly inspired by Pixar’s RenderMan, where individual characters represented different parts of the system.
 
 By late 2014, the project went onto GitHub - initially as a way to learn Git and GitHub.
 
