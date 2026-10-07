@@ -1,5 +1,9 @@
 .DS_Store
+Thumbs.db
+
+# Build output
 public
+.hugo_build.lock
 
 # Hugo's asset pipeline cache - regenerated on every build
 resources/_gen

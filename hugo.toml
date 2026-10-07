@@ -6,6 +6,10 @@ defaultcontentlanguage = "en"
 
 enableRobotsTXT = true
 
+# Empty category/tag index pages are generated for every taxonomy by default.
+# Nothing uses them, so skip those page kinds entirely.
+disableKinds = ['taxonomy', 'term']
+
 # Suppress warnings
 ignoreLogs = ['warning-goldmark-raw-html']
 
@@ -39,11 +43,9 @@ style = "github-dark"
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]
 
-[taxonomies]
-  category = "categories"
-  series = "series"
-  tag = "tags"
-  author = "authors"
+# Taxonomies were removed along with the unused terms/taxonomy partials.
+# No content file sets categories, series, tags or authors front matter.
+# Re-add a [taxonomies] block here if post tagging is reintroduced.
 
 # Social links
 [[params.social]]
