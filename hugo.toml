@@ -54,7 +54,7 @@ style = "github-dark"
   name = "OpenCollective"
   icon = "fa-solid fa-circle-dollar-to-slot fa-2x"
   weight = 2
-  url = "https://opencollective.com/pyrevitlabs/donate"
+  url = "https://opencollective.com/pyrevitlabs/tiers"
 [[params.social]]
   name = "Forum pyRevit"
   icon = "fa-regular fa-comments fa-2x"
