@@ -175,10 +175,11 @@ fetchLatestArtifact()
                 const downloadLink = document.querySelector('.downloadLink');
                 downloadLink.href = releasePageUrl;
                 const tag_name = release.tag_name.split('.').slice(0, -1).join('.').split('v').slice(1).join('v');
-                // Select the button inside the download link
-                const downloadButton = document.querySelector('.downloadLink button');
-                // Update the button's inner HTML
-                downloadButton.innerHTML = `Latest Release <i class="fa-solid fa-download"></i></br>${tag_name}`;
+                // Select the version tag inside the release button
+                const releaseTag = document.querySelector('.downloadLink .js-release-tag');
+                if (releaseTag) {
+                    releaseTag.textContent = tag_name;
+                }
             }
         })
         .catch(error => {

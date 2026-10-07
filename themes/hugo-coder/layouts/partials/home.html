@@ -1,7 +1,7 @@
 <style>
   .avatar img {
-    width: 100%;
-    height: 100%;
+    width: 26rem;
+    height: auto;
   }
 
   .footer a {
@@ -12,31 +12,79 @@
     background-color: transparent !important;
   }
 
+  /* .about is a centered flex item and would otherwise shrink-wrap,
+     which starves .column-r and forces the buttons to wrap */
+  .centered .about {
+    width: 100%;
+  }
+
+  /* The theme container is 90rem, but html font-size is 62.5%, so 90rem is
+     only 900px - not enough for the avatar plus the button stack */
+  .container.centered {
+    max-width: 88rem;
+  }
+
   .persona-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 
+  /* Size to the avatar instead of a fixed basis, so the logo is not squeezed */
   .column-l {
     display: flex;
-    flex: 2;
-    padding: 2em
+    flex: 0 0 auto;
+    padding: 2em 2em 2em 0;
   }
 
+  .avatar {
+    flex: 0 0 auto;
+  }
+
+  /* Two near-square buttons on the first row, the wide support button spanning
+     both columns underneath. The grid tracks own the sizing - the buttons carry
+     no min/max width of their own, so they fill their cell exactly. */
   .column-r {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 1rem;
+    align-content: center;
+    justify-content: start;
+    padding: 0;
+    /* 70% of the previous 40rem button span, so the group sits tighter
+       against the avatar instead of sprawling across the page */
+    width: min(100%, 28rem);
+  }
+
+  @media only screen and (max-width: 768px) {
+    .column-r {
+      width: 100%;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .column-r > a.supportLink {
+    grid-column: 1 / -1;
+  }
+
+  /* Anchors are the grid items; let their buttons fill and share height */
+  .column-r > a {
     display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: 2em;
-    align-items: flex-end;
-    /* Ensures alignment to the right */
+    align-items: stretch;
+    text-decoration: none;
+  }
+
+  .column-r button {
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
   }
 
   button {
     display: block;
-    max-width: 300px;
-    /* Controls the button width */
+    width: 100%;
+    /* Width comes from the grid tracks, not from the button itself */
     height: auto;
     /* Adjust height to fit content */
     border-radius: 1rem;
@@ -45,29 +93,84 @@
     text-align: center;
     background-color: #377bc8;
     text-decoration: none;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.28), 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.25s ease, transform 0.15s ease;
     padding: 0.5rem;
     margin-bottom: 1rem;
     /* Space between buttons */
   }
 
-  .wip-b {
-    font-size: 80%;
-    background-color: rgb(245, 199, 15);
-    padding: 1rem;
-    margin-top: 10px;
-    border-radius: 1rem;
-    border: none;
-    text-color: #022649;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Shared hover / click affordance for every home page button */
+  button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.32), 0 3px 5px rgba(0, 0, 0, 0.22);
   }
 
-  button:hover {
-    background-color: #377bc881;
+  button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.32);
+    transition-duration: 0.05s;
+  }
+
+  button:focus-visible {
+    outline: 2px solid #1565c0;
+    outline-offset: 3px;
+  }
+
+  /* Release + WIP share sizing so their heights match. No min-width here on
+     purpose - it would overflow the grid track and skew the row. */
+  .rel-b,
+  .wip-b {
+    font-size: 92%;
+    min-height: 6.5rem;
+    padding: 0.9rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+
+  /* The release button is the bigger of the two download buttons */
+  .rel-b {
+    font-size: 108%;
+    color: #fff;
+  }
+
+  .rel-b:hover {
+    background-color: #2f6bb5;
+  }
+
+  .wip-b {
+    background-color: #616161;
+    color: #fff;
+  }
+
+  .wip-b:hover {
+    background-color: #757575;
+  }
+
+  .support-b {
+    font-size: 95%;
+    background-color: #f5c70f;
+    color: #1f2a44;
+    padding: 1.15rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .support-b:hover {
+    background-color: #e0b400;
+  }
+
+  .support-sub {
+    display: block;
+    font-size: 0.72em;
+    line-height: 1.35;
+    margin-top: 0.5rem;
+    color: rgba(31, 42, 68, 0.8);
   }
 
   button:focus,
@@ -76,9 +179,176 @@
     text-decoration: none; 
   }
 
+  .btn-label {
+    display: block;
+    /* No nowrap: it would set a min-content floor and stop the grid
+       tracks from shrinking to the container width */
+  }
+
+  /* ---------------------------------------------------------------------
+     One-shot spark: a conic gradient masked to a thin ring, rotated around
+     the button's rounded border. The .rel-b ring runs on load; the .support-b
+     ring starts one spark-duration later so the two run back to back. Each
+     plays exactly once and then leaves the button untouched.
+     --------------------------------------------------------------------- */
+  @property --spark-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  .spark-ring {
+    position: relative;
+  }
+
+  .spark-ring::after {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    padding: 1.5px;
+    /* Tight, hot trail with a white-hot leading edge */
+    background: conic-gradient(from var(--spark-angle),
+        transparent 0deg,
+        transparent 288deg,
+        var(--spark-color, #ffe082) 314deg,
+        #fffde7 340deg,
+        #ffffff 356deg,
+        #ffffff 360deg);
+    /* Keep only the ring: mask the gradient down to the padding band */
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    pointer-events: none;
+    /* A touch of bloom so the spark reads as light, not as a painted border */
+    filter: drop-shadow(0 0 2px var(--spark-glow, #ffd54f)) drop-shadow(0 0 5px var(--spark-glow, #ffd54f));
+    animation: spark-run 1.15s cubic-bezier(0.5, 0, 0.2, 1) 1 forwards;
+  }
+
+  .rel-b.spark-ring::after {
+    animation-delay: 0.35s;
+    --spark-color: #ffe082;
+    --spark-glow: #b3e5fc;
+  }
+
+  /* The second spark picks up where the first one finished */
+  .support-b.spark-ring::after {
+    animation-delay: 1.5s;
+    --spark-color: #fff6cf;
+    --spark-glow: #fff3a0;
+  }
+
+  /* Dark mode: a pure-black shadow is invisible against the dark page, so the
+     depth comes from a brighter rim plus a shadow that reads as a soft halo
+     around the button instead of a shadow cast on the background. */
+  body.colorscheme-dark button {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 6px 16px rgba(0, 0, 0, 0.9),
+      0 0 18px rgba(255, 255, 255, 0.06);
+  }
+
+  body.colorscheme-dark button:hover {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4), 0 12px 26px rgba(0, 0, 0, 0.95),
+      0 0 26px rgba(255, 255, 255, 0.12);
+  }
+
+  body.colorscheme-dark button:active {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28), 0 2px 8px rgba(0, 0, 0, 0.9);
+    transition-duration: 0.05s;
+  }
+
+  /* Same treatment under auto + OS dark preference */
+  @media (prefers-color-scheme: dark) {
+    body.colorscheme-auto button {
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 6px 16px rgba(0, 0, 0, 0.9),
+        0 0 18px rgba(255, 255, 255, 0.06);
+    }
+
+    body.colorscheme-auto button:hover {
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4), 0 12px 26px rgba(0, 0, 0, 0.95),
+        0 0 26px rgba(255, 255, 255, 0.12);
+    }
+
+    body.colorscheme-auto button:active {
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28), 0 2px 8px rgba(0, 0, 0, 0.9);
+      transition-duration: 0.05s;
+    }
+  }
+
+  /* Colder, higher-contrast spark so the trail separates from the dark page */
+  body.colorscheme-dark .rel-b.spark-ring::after {
+    --spark-color: #4fc3f7;
+    --spark-glow: #29b6f6;
+  }
+
+  body.colorscheme-dark .support-b.spark-ring::after {
+    --spark-color: #ffd54f;
+    --spark-glow: #ffab00;
+  }
+
+  /* Scoped to the media query only - an unconditional colorscheme-auto block
+     would apply the dark spark in light mode too */
+  @media (prefers-color-scheme: dark) {
+    body.colorscheme-auto .rel-b.spark-ring::after {
+      --spark-color: #4fc3f7;
+      --spark-glow: #29b6f6;
+    }
+
+    body.colorscheme-auto .support-b.spark-ring::after {
+      --spark-color: #ffd54f;
+      --spark-glow: #ffab00;
+    }
+  }
+
+  @keyframes spark-run {
+    0% {
+      --spark-angle: 0deg;
+      opacity: 0;
+    }
+
+    12% {
+      opacity: 1;
+    }
+
+    88% {
+      opacity: 1;
+    }
+
+    100% {
+      --spark-angle: 360deg;
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spark-ring::after {
+      animation: none;
+      opacity: 0;
+    }
+
+    button:hover,
+    button:active {
+      transform: none;
+    }
+  }
+
+  .btn-tag {
+    display: block;
+    font-size: 0.85em;
+  }
+
+  /* Icon stays glued to the sub-label; the text itself is free to wrap so it
+     cannot pin a min-content floor on the grid track */
   .gh_requ {
-    font-size: 0.65em;
-    color: #0062c4;
+    font-size: 0.58em;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
   }
 </style>
 <section class="container centered">
@@ -90,11 +360,17 @@
 
       <div class="column-r">
         <a href="" class="downloadLink">
-          <button type="button"> <i class="fa-solid fa-download"></i></button>
+          <button type="button" class="rel-b spark-ring"><span class="btn-label"><i class="fa-solid fa-download"></i> Latest
+              Release</span><span class="btn-tag js-release-tag"></span></button>
         </a>
         <a href="" class="WIPdownloadUrl">
-          <button type="button" class="wip-b">WIP Installers<br> <span class="gh_requ">Requires GitHub Account </span><i
-              class="fa-solid fa-download"></i></button>
+          <button type="button" class="wip-b"><span class="btn-label">WIP Installers</span><span class="gh_requ">Requires
+              GitHub Account <i class="fa-solid fa-download"></i></span></button>
+        </a>
+        <a href="https://opencollective.com/pyrevitlabs/tiers" class="supportLink" target="_blank" rel="noopener">
+          <button type="button" class="support-b spark-ring"><i class="fa-solid fa-heart"></i> Support Financially pyRevit<span
+              class="support-sub">Your contribution helps us bear the costs of the infrastructure required to host and make
+              better pyRevit.</span></button>
         </a>
       </div>
     </div>

@@ -35,6 +35,17 @@
       }
     }
 
+    .about-logo {
+      display: block;
+      width: 20rem;
+      height: auto;
+      margin-bottom: 2.4rem;
+
+      @media only screen and (max-width: 768px) {
+        width: 12rem;
+      }
+    }
+
     footer {
       margin-top: 4rem;
 

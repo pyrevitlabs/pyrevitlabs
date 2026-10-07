@@ -1,4 +1,4 @@
-![pyRevit](https://raw.githubusercontent.com/pyrevitlabs/pyRevit/master/static/logo/pyRevitLogo%20R5_WithTitle.svg)
+<img src="/pyRevitLogo.svg" alt="pyRevit" class="about-logo" />
 
 
 pyRevit helps you quickly sketch out your automation and addon ideas, in whichever language that you are most comfortable with, inside the Revit environment and using its APIs. It also ships with an extensive set of powerful tools that showcase its capabilities as a development environment. Download and install pyRevit, launch Revit, and note the new pyRevit tab that includes these tools. pyRevit also ships with a handy CLI utility for customized configuration and deployment of your tools, and a telemetry server to monitor pyRevit usage across your teams.

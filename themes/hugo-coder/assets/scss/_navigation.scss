@@ -22,6 +22,15 @@
   .navigation-title {
     letter-spacing: 0.1rem;
     text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    .navigation-logo {
+      width: 2.8rem;
+      height: auto;
+      display: block;
+    }
   }
 
   .navigation-list {

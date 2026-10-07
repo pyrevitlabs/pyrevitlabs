@@ -1,2 +1,5 @@
 .DS_Store
 public
+
+# Hugo's asset pipeline cache - regenerated on every build
+resources/_gen
