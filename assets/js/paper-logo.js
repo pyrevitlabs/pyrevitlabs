@@ -220,7 +220,7 @@ function makePaperTextures(anisotropy) {
       const dy = (height[wrap(y + 1) * size + x] - height[wrap(y - 1) * size + x]) * slope;
       const inverse = 1 / Math.sqrt(dx * dx + dy * dy + 1);
       normalPixels[o] = Math.round((-dx * inverse * 0.5 + 0.5) * 255);
-      normalPixels[o + 1] = Math.round((dy * inverse * 0.5 + 0.5) * 255);
+      normalPixels[o + 1] = Math.round((-dy * inverse * 0.5 + 0.5) * 255);
       normalPixels[o + 2] = Math.round((inverse * 0.5 + 0.5) * 255);
       normalPixels[o + 3] = 255;
     }
