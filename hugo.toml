@@ -39,6 +39,10 @@ style = "github-dark"
   colorScheme = "auto"
   hidecolorschemetoggle = false
 
+  # Folded-paper logo in a WebGL studio behind the home page, following the
+  # color scheme. Set to false to get the plain page background back.
+  paperLogoBackdrop = true
+
   # customCSS = ["css/custom.css"]
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]

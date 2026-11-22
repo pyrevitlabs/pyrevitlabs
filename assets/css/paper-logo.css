@@ -1,0 +1,190 @@
+/* pyRevit paper logo backdrop: fixed WebGL studio behind the home page, plus its control dock. */
+
+@media screen {
+  .paper-logo-scene {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+  }
+
+  body.paper-logo-live .paper-logo-scene {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* The live logo stands exactly where the avatar image is, so the image only keeps its space. */
+  body.paper-logo-live .avatar img {
+    visibility: hidden;
+  }
+
+  #paper-logo-dock {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 110;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  #paper-logo-dock[hidden],
+  #paper-logo-panel[hidden] {
+    display: none;
+  }
+
+  /* The theme toggle shares this corner: slide it left of the yellow button. */
+  body.paper-logo-docked .float-container {
+    right: 80px;
+    bottom: 29px;
+  }
+
+  /* The home page styles every <button>; reset that here with id specificity. */
+  #paper-logo-dock button {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 32px;
+    min-height: 0;
+    margin: 0;
+    padding: 0 12px;
+    border: 1px solid var(--paper-logo-rule);
+    border-radius: 9px;
+    background: transparent;
+    box-shadow: none;
+    color: inherit;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    transform: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  #paper-logo-dock button:hover,
+  #paper-logo-dock button:active {
+    transform: none;
+    box-shadow: none;
+    border-color: currentColor;
+  }
+
+  #paper-logo-dock button:focus-visible,
+  #paper-logo-dock input:focus-visible {
+    outline: 2px solid #f1c40f;
+    outline-offset: 3px;
+  }
+
+  #paper-logo-dock button[aria-pressed="true"] {
+    background: #f1c40f;
+    border-color: #f1c40f;
+    color: #1f2a44;
+  }
+
+  #paper-logo-dock #paper-logo-kebab {
+    flex-direction: column;
+    gap: 4px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #f1c40f;
+    color: #1f2a44;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32), 0 1px 3px rgba(0, 0, 0, 0.28);
+    transition: background-color 0.15s ease, transform 0.2s ease;
+  }
+
+  #paper-logo-dock #paper-logo-kebab:hover {
+    background: #ffd633;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.36), 0 1px 3px rgba(0, 0, 0, 0.28);
+  }
+
+  #paper-logo-dock #paper-logo-kebab[aria-expanded="true"] {
+    transform: rotate(90deg);
+  }
+
+  #paper-logo-kebab span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  #paper-logo-panel {
+    --paper-logo-rule: rgba(33, 33, 33, 0.24);
+    display: grid;
+    gap: 12px;
+    width: min(288px, calc(100vw - 40px));
+    padding: 14px;
+    border: 1px solid rgba(33, 33, 33, 0.14);
+    border-radius: 14px;
+    background: rgba(250, 250, 250, 0.94);
+    color: #212121;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  body.colorscheme-dark #paper-logo-panel {
+    --paper-logo-rule: rgba(218, 218, 218, 0.28);
+    border-color: rgba(218, 218, 218, 0.16);
+    background: rgba(24, 27, 32, 0.92);
+    color: #e4e4e4;
+  }
+
+  .paper-logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .paper-logo-segment {
+    display: flex;
+    gap: 4px;
+  }
+
+  .paper-logo-dial {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .paper-logo-dial input {
+    width: 100%;
+    margin: 0;
+    accent-color: #d6a80a;
+    cursor: pointer;
+  }
+}
+
+@media print {
+  .paper-logo-scene,
+  #paper-logo-dock {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paper-logo-scene,
+  #paper-logo-dock button,
+  #paper-logo-dock #paper-logo-kebab {
+    transition: none;
+  }
+}
