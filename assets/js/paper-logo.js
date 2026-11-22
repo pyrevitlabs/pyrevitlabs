@@ -793,7 +793,8 @@ function start(renderer) {
     const height = window.innerHeight;
     const slot = anchor.getBoundingClientRect();
     const slotHeight = slot.height || slot.width * LOGO_ASPECT;
-    const shown = slot.width > 8;
+    const shown = slot.width > 8 && !renderer.getContext().isContextLost();
+    if (logoGroup.visible !== shown) relight();
     logoGroup.visible = shown;
     dock.hidden = !shown;
     document.body.classList.toggle('paper-logo-docked', shown);
@@ -896,6 +897,14 @@ function start(renderer) {
     if (!panel.hidden && !dock.contains(event.target)) openPanel(false);
   });
   document.addEventListener('themeChanged', applyTheme);
+  renderer.domElement.addEventListener('webglcontextlost', () => {
+    state.live = false;
+    state.moved = true;
+    document.body.classList.remove('paper-logo-live');
+  });
+  renderer.domElement.addEventListener('webglcontextrestored', () => {
+    state.moved = true;
+  });
   window.addEventListener('scroll', () => {
     state.moved = true;
   }, { passive: true });
@@ -967,7 +976,7 @@ function start(renderer) {
       state.stale = false;
       backdrop.position.copy(camera.position);
       renderer.render(scene, camera);
-      if (!state.live) {
+      if (!state.live && !renderer.getContext().isContextLost()) {
         state.live = true;
         document.body.classList.add('paper-logo-live');
       }
