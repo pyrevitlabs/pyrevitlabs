@@ -205,13 +205,8 @@ function makePaperTextures(anisotropy) {
     height[i] = mottle[i] * 0.3 + (tooth[i] - 0.5) * 0.8 + speck[i] * 0.6 + Math.min(fibre[i], 1) * 0.35;
   }
 
-  const colourCanvas = document.createElement('canvas');
-  const normalCanvas = document.createElement('canvas');
-  colourCanvas.width = colourCanvas.height = normalCanvas.width = normalCanvas.height = size;
-  const colourContext = colourCanvas.getContext('2d');
-  const normalContext = normalCanvas.getContext('2d');
-  const colourData = colourContext.createImageData(size, size);
-  const normalData = normalContext.createImageData(size, size);
+  const colourPixels = new Uint8Array(size * size * 4);
+  const normalPixels = new Uint8Array(size * size * 4);
   const slope = 1.5;
   for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
@@ -219,32 +214,33 @@ function makePaperTextures(anisotropy) {
       const o = i * 4;
       const tone = 0.9 + (mottle[i] - 0.5) * 0.14 + (tooth[i] - 0.5) * 0.08 + speck[i] * 0.1 + Math.min(fibre[i], 1) * 0.08;
       const byte = Math.max(0, Math.min(255, Math.round(tone * 255)));
-      colourData.data[o] = colourData.data[o + 1] = colourData.data[o + 2] = byte;
-      colourData.data[o + 3] = 255;
+      colourPixels[o] = colourPixels[o + 1] = colourPixels[o + 2] = byte;
+      colourPixels[o + 3] = 255;
       const dx = (height[y * size + wrap(x + 1)] - height[y * size + wrap(x - 1)]) * slope;
       const dy = (height[wrap(y + 1) * size + x] - height[wrap(y - 1) * size + x]) * slope;
       const inverse = 1 / Math.sqrt(dx * dx + dy * dy + 1);
-      normalData.data[o] = Math.round((-dx * inverse * 0.5 + 0.5) * 255);
-      normalData.data[o + 1] = Math.round((dy * inverse * 0.5 + 0.5) * 255);
-      normalData.data[o + 2] = Math.round((inverse * 0.5 + 0.5) * 255);
-      normalData.data[o + 3] = 255;
+      normalPixels[o] = Math.round((-dx * inverse * 0.5 + 0.5) * 255);
+      normalPixels[o + 1] = Math.round((dy * inverse * 0.5 + 0.5) * 255);
+      normalPixels[o + 2] = Math.round((inverse * 0.5 + 0.5) * 255);
+      normalPixels[o + 3] = 255;
     }
   }
-  colourContext.putImageData(colourData, 0, 0);
-  normalContext.putImageData(normalData, 0, 0);
 
-  const prepare = (texture) => {
+  // Plain typed arrays, not 2D canvases: the most portable way to hand pixels to WebGL.
+  // Canvas-backed textures came out with colour and normal maps mixed up in Firefox for Android.
+  const prepare = (pixels) => {
+    const texture = new THREE.DataTexture(pixels, size, size, THREE.RGBAFormat);
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    texture.magFilter = THREE.LinearFilter;
+    texture.minFilter = THREE.LinearMipmapLinearFilter;
+    texture.generateMipmaps = true;
     texture.anisotropy = anisotropy;
+    texture.needsUpdate = true;
     return texture;
   };
-  const colour = prepare(new THREE.CanvasTexture(colourCanvas));
+  const colour = prepare(colourPixels);
   colour.encoding = THREE.sRGBEncoding;
-  return {
-    colour,
-    roughness: prepare(new THREE.CanvasTexture(colourCanvas)),
-    normal: prepare(new THREE.CanvasTexture(normalCanvas))
-  };
+  return { colour, normal: prepare(normalPixels) };
 }
 
 class Bucket {
@@ -530,7 +526,6 @@ function start(renderer) {
     roughness,
     metalness: 0,
     map: textures.colour,
-    roughnessMap: textures.roughness,
     normalMap: textures.normal,
     normalScale: new THREE.Vector2(0.3, 0.3)
   }));
@@ -593,7 +588,11 @@ function start(renderer) {
 
   const keyTarget = new THREE.Object3D();
   scene.add(keyTarget);
-  const keySpread = [[0, 0], [0.3, 0.16], [-0.27, 0.2], [0.1, -0.3], [-0.2, -0.18]];
+  // Each key light samples its own shadow map. Phones get three instead of five,
+  // which keeps the paper shader well under the eight texture units some of them stop at.
+  const keySpread = window.matchMedia('(pointer: coarse)').matches
+    ? [[0, 0], [0.3, 0.16], [-0.27, -0.18]]
+    : [[0, 0], [0.3, 0.16], [-0.27, 0.2], [0.1, -0.3], [-0.2, -0.18]];
   const keyLights = keySpread.map(() => {
     const light = new THREE.SpotLight(0xfff6e6, 1.2 / keySpread.length, 0, 0.27, 1);
     light.castShadow = true;
@@ -613,7 +612,7 @@ function start(renderer) {
     posedFold: -1,
     eye: new THREE.Vector3(0, 0, EYE_DISTANCE),
     frame: { x: 0, y: LOGO_SPAN.height / 2, width: LOGO_SPAN.width, height: LOGO_SPAN.height },
-    restHeight: LOGO_SPAN.height / 2,
+    settle: 1,
     view: 'front',
     tween: null,
     intro: null,
@@ -688,6 +687,8 @@ function start(renderer) {
     Object.keys(exact).forEach((key) => {
       state.frame[key] = loose[key] + (exact[key] - loose[key]) * settle;
     });
+    state.settle = settle;
+    state.moved = true;
     state.posedFold = state.fold;
     placeKeyLight(Number(lightInput.value));
   };
@@ -769,10 +770,6 @@ function start(renderer) {
     roll = Math.atan2(Math.sin(roll), Math.cos(roll));
     rootTurn.setFromAxisAngle(new THREE.Vector3(0, 0, 1), roll).multiply(facing);
 
-    layOut(1, rootTurn);
-    const folded = new THREE.Box3();
-    chain.forEach((link) => parts[link.name].outline.forEach((point) => folded.expandByPoint(placed(parts[link.name], point))));
-    state.restHeight = PAPER_THICKNESS / 2 - folded.min.y;
     poseLogo();
   };
 
@@ -780,7 +777,7 @@ function start(renderer) {
   const target = new THREE.Vector3();
   const spherical = new THREE.Spherical();
   const aimCamera = () => {
-    target.set(0, state.restHeight, 0);
+    target.set(state.frame.x, state.frame.y, 0);
     spherical.set(EYE_DISTANCE, pose.phi, pose.theta);
     camera.position.setFromSpherical(spherical).add(target);
     camera.lookAt(target);
@@ -800,9 +797,19 @@ function start(renderer) {
     document.body.classList.toggle('paper-logo-docked', shown);
     camera.aspect = width / height;
     if (shown) {
-      const tangent = Math.min(WIDEST_TANGENT, (LOGO_HEIGHT * UNIT * height) / (2 * EYE_DISTANCE * slotHeight));
+      // Folded, the logo fills its slot exactly. While it is opened out, pull back and slide
+      // sideways just enough to keep the whole sheet on screen, which matters on phones.
+      const frame = state.frame;
+      const loose = 1 - state.settle;
+      const slotTangent = (LOGO_HEIGHT * UNIT * height) / (2 * EYE_DISTANCE * slotHeight);
+      const fitTangent = Math.max((frame.width * height) / (2 * EYE_DISTANCE * 0.94 * width), frame.height / (2 * EYE_DISTANCE * 0.8));
+      const tangent = Math.min(WIDEST_TANGENT, slotTangent + Math.max(0, fitTangent - slotTangent) * loose);
+      const reach = (frame.width * height) / (4 * EYE_DISTANCE * tangent);
+      const slotX = slot.left + slot.width / 2;
+      const clearX = reach * 2 <= width * 0.94 ? Math.min(Math.max(slotX, width * 0.03 + reach), width * 0.97 - reach) : width / 2;
+      const axisX = slotX + (clearX - slotX) * loose;
       camera.fov = (Math.atan(tangent) * 360) / Math.PI;
-      camera.setViewOffset(width, height, width / 2 - (slot.left + slot.width / 2), height / 2 - (slot.top + slotHeight / 2), width, height);
+      camera.setViewOffset(width, height, width / 2 - axisX, height / 2 - (slot.top + slotHeight / 2), width, height);
     } else {
       camera.clearViewOffset();
     }
@@ -944,7 +951,10 @@ function start(renderer) {
     } else {
       state.fold = state.foldTarget;
     }
-    if (state.fold !== state.posedFold) poseLogo();
+    if (state.fold !== state.posedFold) {
+      poseLogo();
+      aimCamera();
+    }
 
     if (state.tween) {
       const k = easeInOut(clamp01((now - state.tween.started) / state.tween.duration));
