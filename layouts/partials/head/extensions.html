@@ -1,0 +1,7 @@
+{{/*
+  Site-level override of the theme's empty <head> extension point.
+*/}}
+{{ if .Site.Params.paperLogoBackdrop }}
+{{ $styles := resources.Get "css/paper-logo.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
+{{ end }}

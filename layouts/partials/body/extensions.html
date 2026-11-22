@@ -1,0 +1,47 @@
+{{/*
+  Site-level override of the theme's empty end-of-<body> extension point.
+
+  Paper logo backdrop: a fixed WebGL canvas behind the page and the yellow
+  button that opens its controls. Switch it off with
+  params.paperLogoBackdrop = false in hugo.toml.
+*/}}
+{{ if .Site.Params.paperLogoBackdrop }}
+<canvas id="paper-logo-scene" class="paper-logo-scene" aria-hidden="true"></canvas>
+<div id="paper-logo-anchor" class="paper-logo-anchor" aria-hidden="true"></div>
+<div id="paper-logo-dock" hidden>
+  <div id="paper-logo-panel" role="group" aria-label="Paper logo controls" hidden>
+    <div class="paper-logo-row">
+      <button type="button" id="paper-logo-replay" title="Play the fold again from the flat sheet">Replay</button>
+      <div class="paper-logo-segment" role="group" aria-label="View">
+        <button type="button" id="paper-logo-front" aria-pressed="true" title="Line the folds up into the flat logo">Front</button>
+        <button type="button" id="paper-logo-3d" aria-pressed="false" title="Three-quarter view">3D</button>
+      </div>
+    </div>
+    <label class="paper-logo-dial" for="paper-logo-fold">
+      <span>Fold</span>
+      <input type="range" id="paper-logo-fold" min="0" max="100" step="1" value="100" aria-label="Fold, from flat sheet to finished logo">
+    </label>
+    <label class="paper-logo-dial" for="paper-logo-turn">
+      <span>Turn</span>
+      <input type="range" id="paper-logo-turn" min="-180" max="180" step="1" value="0" aria-label="Turn the logo around">
+    </label>
+    <label class="paper-logo-dial" for="paper-logo-light">
+      <span>Light</span>
+      <input type="range" id="paper-logo-light" min="-70" max="55" step="1" value="-32" aria-label="Key light direction, left to right">
+    </label>
+    <div class="paper-logo-segment" role="group" aria-label="Fold pattern">
+      <button type="button" id="paper-logo-strip" aria-pressed="false" title="A two-sided strip with four folds">Strip</button>
+      <button type="button" id="paper-logo-backed" aria-pressed="true" title="Printed on one side: charcoal flaps fold behind each panel first">Self-backed</button>
+    </div>
+  </div>
+  <button type="button" id="paper-logo-kebab" aria-expanded="false" aria-controls="paper-logo-panel" aria-label="Paper logo controls" title="Paper logo controls">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+{{ $three := resources.Get "js/vendor/three.min.js" | fingerprint }}
+{{ $reflector := resources.Get "js/vendor/three.Reflector.js" | minify | fingerprint }}
+{{ $scene := resources.Get "js/paper-logo.js" | minify | fingerprint }}
+<script defer src="{{ $three.RelPermalink }}" integrity="{{ $three.Data.Integrity }}"></script>
+<script defer src="{{ $reflector.RelPermalink }}" integrity="{{ $reflector.Data.Integrity }}"></script>
+<script defer src="{{ $scene.RelPermalink }}" integrity="{{ $scene.Data.Integrity }}"></script>
+{{ end }}
