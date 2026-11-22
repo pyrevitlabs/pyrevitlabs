@@ -1,13 +1,12 @@
 {{/*
   Site-level override of the theme's empty end-of-<body> extension point.
 
-  Paper logo backdrop: a fixed WebGL canvas behind the page and the yellow
-  button that opens its controls. Switch it off with
+  Paper logo backdrop, home page only: a fixed WebGL canvas behind the page and
+  the yellow button that opens its controls. Switch it off with
   params.paperLogoBackdrop = false in hugo.toml.
 */}}
-{{ if .Site.Params.paperLogoBackdrop }}
+{{ if and .Site.Params.paperLogoBackdrop .IsHome }}
 <canvas id="paper-logo-scene" class="paper-logo-scene" aria-hidden="true"></canvas>
-<div id="paper-logo-anchor" class="paper-logo-anchor" aria-hidden="true"></div>
 <div id="paper-logo-dock" hidden>
   <div id="paper-logo-panel" role="group" aria-label="Paper logo controls" hidden>
     <div class="paper-logo-row">

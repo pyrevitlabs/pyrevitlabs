@@ -1,10 +1,10 @@
 /*
  * pyRevit paper logo backdrop.
  *
- * Draws the folded-paper pyRevit logo in a small WebGL studio behind every page.
- * On the home page it stands exactly where the avatar image is; elsewhere it sits
- * in the bottom-right margin. The studio follows the theme's light/dark scheme,
- * and the controls live in the yellow button at the bottom right.
+ * Draws the folded-paper pyRevit logo in a small WebGL studio behind the home
+ * page, standing exactly where the avatar image is. The studio follows the
+ * theme's light/dark scheme, and the controls live in the yellow button at the
+ * bottom right.
  *
  * Needs three.js r147 and its Reflector helper (assets/js/vendor). If WebGL is
  * missing or software-only, the script does nothing and the site looks as before.
@@ -457,8 +457,7 @@ function start(renderer) {
   const lightInput = document.getElementById('paper-logo-light');
   const viewButtons = { front: document.getElementById('paper-logo-front'), turned: document.getElementById('paper-logo-3d') };
   const patternButtons = { strip: document.getElementById('paper-logo-strip'), backed: document.getElementById('paper-logo-backed') };
-  const avatar = document.querySelector('.avatar img');
-  const anchor = avatar || document.getElementById('paper-logo-anchor');
+  const anchor = document.querySelector('.avatar img');
 
   THREE.ColorManagement.legacyMode = false;
   THREE.ShaderChunk.tonemapping_pars_fragment = THREE.ShaderChunk.tonemapping_pars_fragment.replace(
@@ -919,7 +918,7 @@ function start(renderer) {
   rebuildLogo();
   aimCamera();
   fitToAnchor();
-  if (avatar && !reducedMotion) replay(600);
+  if (!reducedMotion) replay(600);
 
   let previous = performance.now();
   const frame = (now) => {
@@ -979,7 +978,7 @@ function start(renderer) {
 }
 
 const canvas = document.getElementById('paper-logo-scene');
-if (!canvas || !window.THREE || !THREE.Reflector || !document.getElementById('paper-logo-dock')) return;
+if (!canvas || !window.THREE || !THREE.Reflector || !document.querySelector('.avatar img')) return;
 let renderer = null;
 try {
   renderer = new THREE.WebGLRenderer({ canvas, antialias: true, failIfMajorPerformanceCaveat: true });

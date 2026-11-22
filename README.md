@@ -2,9 +2,9 @@
 
 ## Paper logo backdrop
 
-Every page has the folded-paper pyRevit logo standing in a small WebGL studio behind the content.
+The home page has the folded-paper pyRevit logo standing in a small WebGL studio behind the content.
 
-- On the home page it stands exactly where the avatar image is; on other pages it sits in the right-hand margin on wide screens.
+- It stands exactly where the avatar image is and folds itself up on load. Other pages are untouched and load none of it.
 - The studio follows the theme's light/dark switch.
 - The yellow button at the bottom right opens its controls (replay, fold, view, turn, light, fold pattern).
 - Without WebGL, or with software-only WebGL, nothing loads and the site looks as it did before.

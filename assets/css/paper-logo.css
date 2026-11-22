@@ -1,4 +1,4 @@
-/* pyRevit paper logo backdrop: fixed WebGL studio behind the page, plus its control dock. */
+/* pyRevit paper logo backdrop: fixed WebGL studio behind the home page, plus its control dock. */
 
 @media screen {
   .paper-logo-scene {
@@ -21,25 +21,6 @@
   /* The live logo stands exactly where the avatar image is, so the image only keeps its space. */
   body.paper-logo-live .avatar img {
     visibility: hidden;
-  }
-
-  /* Away from the home page the logo sits in the right-hand margin, beside the 900px content
-     column and above the space the control panel opens into. */
-  .paper-logo-anchor {
-    position: fixed;
-    right: 28px;
-    top: 44%;
-    width: clamp(120px, calc((100vw - 900px) / 2 - 56px), 240px);
-    aspect-ratio: 198.1 / 218.4;
-    transform: translateY(-50%);
-    pointer-events: none;
-    visibility: hidden;
-  }
-
-  @media (max-width: 1239px), (max-height: 619px) {
-    .paper-logo-anchor {
-      display: none;
-    }
   }
 
   #paper-logo-dock {
@@ -195,7 +176,6 @@
 
 @media print {
   .paper-logo-scene,
-  .paper-logo-anchor,
   #paper-logo-dock {
     display: none !important;
   }
